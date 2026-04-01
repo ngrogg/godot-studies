@@ -86,5 +86,38 @@ Next add texture.
 Select the new ground object, under inspector find the "CSGBox" section and the "Material" dropdown.
 Select "New Spatial Material".
 Select the resulting sphere, look for "Albedo" option.
+Add the "tile.jpg" texture from the resource pack. A zip file + export is in this repo.
+
+Will depend on OS, but on Linux it was dragged and dropped from file manager into FileSystem dock.
+From FileSystem dock, drag the "tile.jpg" texture to the "Texture" menu under Albedo for the sphere.
+If done correctly, the ground texture will change color to reflect the new file.
+
+To tile the ground texture select the object "ground" in the scene tree: <br>
+1. Location the "CSGBOX" section.
+2. Click on the sphere to the right of the Material label.
+3. Locate the "Uv1" section.
+4. Change the "Scale" property. Book uses 5,5,5
+
+### Adding Multicolor boxes and stairs
+Modify the light so it illuminates the scene.
+Select the light object, change it's "energy" attribute under the light section to "10".
+Change it's y coordinate to 10.
+
+Add a new child node box.
+Name it "redBox".
+Change the y coordinates so it's above ground. Book uses 0,2,0
+Change it's material to "New Spatial Material"
+Change the Albedo color to some shade of red.
+
+Once done select the box and either use the hotkey Control + D or right click and select "Duplicate".
+Move new box alone x axis with method of choosing.
+Change name to "greenBox".
+Change Material to "New Spatial Material".
+Do not just change the color, it will change the original color as well.
+Once new texture is applied, color can be safely changed under Albedo.
+
+Repeat the duplication one more time and move the new box along the X axis so it's not under the original box.
+
+### Creating a simple staircase
 
 ## Post-chapter quiz w/ answers
