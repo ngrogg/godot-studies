@@ -1,0 +1,28 @@
+{
+	
+		"Quest1":
+		{
+
+			"name":"XXX",
+			"stages":
+			[
+				{
+					"id" : "0",
+					"name": "Training Camp",
+					"description":"This is a training camp where you will master your skills",
+					"results":
+					[
+						{"action":"Talk to","target":"Diana","xp" : "10"},
+						{"action":"Acquire a","target":"Apple","xp" : "10"},						
+						{"action":"Enter place called","target":"yellow_house","xp" : "10"},
+						{"action":"Destroy one","target":"NPC_Guard","xp" : "10"},						
+					]
+
+				}
+
+			]
+
+		}
+
+
+}
