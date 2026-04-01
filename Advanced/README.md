@@ -11,7 +11,7 @@ Studies based on book series "Godot from Zero to Proficiency".
 ### Chapter 5: Creating a platformer
 ### Chapter 6: FAQ
 ### Chapter 7: Thank You
-This chapter is skipped as contains no commands, tutorials or code.
+This chapter is skipped as it contains no commands, tutorials or code.
 
 ## Book Information
 Name: Godot from Zero to Proficiency (Advanced) <br>

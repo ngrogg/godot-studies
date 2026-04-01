@@ -61,7 +61,7 @@ Debugger tab will include compilation errors.
 ### Asset library
 Pre-built assets for projects.
 
-### Post-chapter quiz w/ answers
+## Post-chapter quiz w/ answers
 1. To install Godot, you need to launch an installer. **False**.
 2. Godot is a premium software. **False**. (Assumption is Premium = paid)
 3. With Godot you can create both 2D and 3D games. **True**.

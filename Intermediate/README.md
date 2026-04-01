@@ -11,7 +11,7 @@ Studies based on book series "Godot from Zero to Proficiency".
 ### Chapter 5: FAQ
 ### Chapter 6: Creating and exporting multiple animations with Mixamo
 ### Chapter 7: Thank you
-This chapter is skipped as contains no commands, tutorials or code.
+This chapter is skipped as it contains no commands, tutorials or code.
 
 ## Book Information
 Name: Godot from Zero to Proficiency (Intermediate) <br>
