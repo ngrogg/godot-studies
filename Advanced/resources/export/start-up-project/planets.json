@@ -1,0 +1,11 @@
+{
+"earth":{"name":"Earth", "diameter":1, "distance_to_sun":1, "rotation_period":1, "orbital_velocity":1},
+"mercury":{"name":"Mercury", "diameter":0.3, "distance_to_sun":0.4, "rotation_period":58.8, "orbital_velocity":1.59},
+"venus":{"name":"Venus", "diameter":0.95, "distance_to_sun":0.72, "rotation_period":-244.0, "orbital_velocity":1.18},
+"mars":{"name":"Mars", "diameter":0.53, "distance_to_sun":1.52, "rotation_period":1.03, "orbital_velocity":1.88},
+"jupiter":{"name":"Jupiter", "diameter":11.21, "distance_to_sun":5.20, "rotation_period":0.42, "orbital_velocity":0.44},
+"saturn":{"name":"Saturn", "diameter":9.45, "distance_to_sun":9.58, "rotation_period":0.45, "orbital_velocity":0.33},
+"uranus":{"name":"Uranus", "diameter":4.01, "distance_to_sun":19.20, "rotation_period":-0.72, "orbital_velocity":0.23},
+"neptune":{"name":"Neptune", "diameter":3.88, "distance_to_sun":30.05, "rotation_period":0.67, "orbital_velocity":0.18},
+"pluto":{"name":"Pluto", "diameter":0.19, "distance_to_sun":39.48, "rotation_period":6.41, "orbital_velocity":0.16}
+}
