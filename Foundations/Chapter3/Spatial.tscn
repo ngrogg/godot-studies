@@ -28,12 +28,28 @@ light_energy = 10.0
 
 [node name="redBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+visible = false
 material = SubResource( 2 )
-
-[node name="greenBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01996, 2, 0 )
-material = SubResource( 3 )
 
 [node name="greenBox2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14407, 2, 0 )
+visible = false
+material = SubResource( 3 )
+
+[node name="container-parent" type="Spatial" parent="."]
+
+[node name="greenBox" type="CSGBox" parent="container-parent"]
+transform = Transform( 1.5, 0, 0, 0, 0.2, 0, 0, 0, 1, 3, 2, 0 )
+material = SubResource( 3 )
+
+[node name="greenBox3" type="CSGBox" parent="container-parent"]
+transform = Transform( 1.5, 0, 0, 0, 0.2, 0, 0, 0, 1, 6, 2.5, 0 )
+material = SubResource( 3 )
+
+[node name="greenBox4" type="CSGBox" parent="container-parent"]
+transform = Transform( 1.5, 0, 0, 0, 0.2, 0, 0, 0, 1, 9, 3, 0 )
+material = SubResource( 3 )
+
+[node name="greenBox5" type="CSGBox" parent="container-parent"]
+transform = Transform( 1.5, 0, 0, 0, 0.2, 0, 0, 0, 1, 12, 3.5, 0 )
 material = SubResource( 3 )

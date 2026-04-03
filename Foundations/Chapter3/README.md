@@ -119,5 +119,92 @@ Once new texture is applied, color can be safely changed under Albedo.
 Repeat the duplication one more time and move the new box along the X axis so it's not under the original box.
 
 ### Creating a simple staircase
+Hide the objects that aren't set to be duplicated. In this example it's "redbox" and "greenBox2".
+
+Click the eye symbol next to the object name under "Scene".
+
+Change the scale of the remaining object "greenBox" to 1.5,0.2,1.
+
+Duplicate the item three times, should be greenBox3 -> 5
+
+Postion them in a way to create a staircase. Example the book uses:
+* greenBox  3, 2, 0
+* greenBox3 6, 2.5, 0
+* greenBox4 9, 3, 0
+* greenBox5 12, 3.5, 0
+
+Other values will probably work
+
+### Managing and searching for assets and objects
+Use the search box under "Scene" to search for assets.
+
+Enter box and all the box items will show.
+
+Enter "green" and all the green boxes will show.
+
+The FileSystem tab search also works the same way.
+
+Searching for "tile" will show the texture file.
+
+The "Inspector" menu "Filter properties" will function the same way.
+
+Searching for "Mat" will show the material among it's results.
+
+Next group the stair items together.
+
+Right click the "Spatial" node, add a child node and select "Spatial". May need to search for it.
+
+Name it, then move all the staircase items to the node. Book uses "container-parent" as the name.
+
+Double check that the files moved correctly by selecting the spatial node and the "move" option in the viewfinder.
+All the staircase items should be selected together.
+
+### Building and exporting our scene
+Save scene if not done already.
+
+Project > Export
+
+Select "Add..."
+
+Select OS. This review was done on a Linux machine so that is the option chosen.
+
+Should see messages of missing templates if run for the first time.
+
+Select "Manage Export Templates", follow guide.
+
+For this review the following was used:
+Current Version: 3.5.2.stable
+Download from: Best Available mirror
+Download and Install
+
+Close menu once it's done.
+
+Book uses "install from file" method.
+
+Before exporting set scene for exported game.
+
+Project > Project Settings
+
+General > Run
+
+Select the folder next to "Main Scene" and choose created scene.
+
+Go back to Project > Export
+
+Export Project...
+
+Should ask for filepath. For this review the exported project was saved to repo.
+
+Should be able to open exported game from there.
 
 ## Post-chapter quiz w/ answers
+1. In Godot, all files and scenes are by default saved in the FileSystem dock. **TRUE**
+2. Al objects are usually represented as nodes. **TRUE**
+3. It is possible to apply a texture or color to a cube. **TRUE**
+4. The RGB code is used for colors. **TRUE**
+5. The key W is the shortcut for the Move key. **TRUE**
+6. The key E is the shortcut for the Scale key. **TRUE**
+7. The key R is the shortcut for the Rotate tool. **TRUE**
+8. It is possible to preview the scene when a camera has been added. **TRUE**
+9. It is possible to preview the scene when no camera has been added. **FALSE**
+10. A transformation applied to a Spatial node will also be applied to all it's child nodes. **TRUE**
