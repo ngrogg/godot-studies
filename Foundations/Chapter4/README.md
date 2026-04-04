@@ -1,7 +1,7 @@
 # Chapter 4: Transforming Built-In Objects to create an indoor scene
 
 ## Overview
-Create a maze using shapes and textures. Configure lighting.
+Create a maze using shapes and textures. Configure lighting for atmosphere.
 
 ## Notes
 ### Creating and importing the necessary assets
@@ -51,3 +51,22 @@ Select CSGBox in Scene, under CSGBox section in Inspector tab, set material to N
 Select Albedo attribute then drag and drop the "gameMap.png" file from the "FileSystem" tab and maze folder onto the empty menu option.
 
 Double check that "UV1" menu is set to 1,1,1
+
+### Adding Walls using simple transformations
+Duplicate ground node and call it "room1"
+
+Position just above the ground, book uses 4,1,1.
+
+Change texture on "CSGBox" for room1 node. Added a New SpatialMaterial. Shape and resize box so it matches one of the "dark" areas on the floor map.
+
+Change the Y scale to 2.5 and position to 3.5. To include the ground size.
+
+Apply the "bricks" texture to the GSGBox for room1.
+Change the Uv1 scale as preferred. Books uses 3,2,1.
+
+Duplicate the room1 object to cover the rest of the dark areas of the room.
+
+Next duplicate the room to create a wall.
+Set scale to 1,1,100 and transform to 0, 3.5,-100
+
+## Post-chapter quiz w/ answers
