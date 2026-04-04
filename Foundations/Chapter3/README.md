@@ -1,6 +1,7 @@
 # Chapter 3: Creating and exporting first scene
 
 ## Overview
+Create and export a scene in Godot. Create objects, add textures, configure the camera and configure the export.
 
 ## Notes
 ### Adding and combining simple built-in objects to scene
