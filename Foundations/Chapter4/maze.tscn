@@ -24,12 +24,190 @@ shape = SubResource( 1 )
 material = SubResource( 2 )
 
 [node name="room1" type="StaticBody" parent="."]
-transform = Transform( 100, 0, 0, 0, 2.5, 0, 0, 0, 100, 4, 3.5, 1 )
+transform = Transform( 15.223, 0, 0, 0, 2.5, 0, 0, 0, 32.36, -4.955, 3.5, 7.183 )
 
 [node name="CollisionShape" type="CollisionShape" parent="room1"]
 shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="room1/CollisionShape"]
-transform = Transform( 0.151599, 0, 0, 0, 1.02657, 0, 0, 0, 0.874838, -0.0928876, -0.00372314, 0.0577129 )
-depth = 0.766614
+material = SubResource( 3 )
+
+[node name="room2" type="StaticBody" parent="."]
+transform = Transform( 15.223, 0, 0, 0, 2.5, 0, 0, 0, 32.36, 54.397, 3.5, 7.867 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room2"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room2/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room3" type="StaticBody" parent="."]
+transform = Transform( 18.5959, 0, 0, 0, 2.5, 0, 0, 0, 32.36, -49.647, 3.5, 7.654 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room3"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room3/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room4" type="StaticBody" parent="."]
+transform = Transform( 8.72211, 0, 0, 0, 2.5, 0, 0, 0, 29.1835, -88.161, 3.5, 9.826 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room4"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room4/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room5" type="StaticBody" parent="."]
+transform = Transform( 6.87611, 0, 0, 0, 2.5, 0, 0, 0, 32.5436, 87.669, 3.5, 6.849 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room5"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room5/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room6" type="StaticBody" parent="."]
+transform = Transform( 7.76631, 0, 0, 0, 2.5, 0, 0, 0, 27.8049, -87.534, 3.5, -67.746 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room6"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room6/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room7" type="StaticBody" parent="."]
+transform = Transform( 9.22795, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, -49.767, 3.5, -82.79 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room7"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room7/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room8" type="StaticBody" parent="."]
+transform = Transform( 7.39626, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, -21.872, 3.5, -82.947 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room8"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room8/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room9" type="StaticBody" parent="."]
+transform = Transform( 7.39626, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, 87.042, 3.5, -83.104 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room9"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room9/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room10" type="StaticBody" parent="."]
+transform = Transform( 7.39626, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, 1.791, 3.5, -83.104 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room10"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room10/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room11" type="StaticBody" parent="."]
+transform = Transform( 9.15108, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, 30.156, 3.5, -83.26 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room11"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room11/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room12" type="StaticBody" parent="."]
+transform = Transform( 9.15108, 0, 0, 0, 2.5, 0, 0, 0, 13.1082, 60.401, 3.5, -83.104 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room12"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room12/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room13" type="StaticBody" parent="."]
+transform = Transform( 9.5353, 0, 0, 0, 2.5, 0, 0, 0, 8.08731, -60.11, 3.5, -48.314 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room13"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room13/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room14" type="StaticBody" parent="."]
+transform = Transform( 67.5009, 0, 0, 0, 2.5, 0, 0, 0, 8.08731, 26.865, 3.5, -48.157 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room14"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room14/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room15" type="StaticBody" parent="."]
+transform = Transform( 31.6005, 0, 0, 0, 2.5, 0, 0, 0, 10.4928, -9.805, 3.5, 59.66 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room15"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room15/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room16" type="StaticBody" parent="."]
+transform = Transform( 25.3423, 0, 0, 0, 2.5, 0, 0, 0, 10.4928, 54.916, 3.5, 59.504 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room16"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room16/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="room17" type="StaticBody" parent="."]
+transform = Transform( 11.2561, 0, 0, 0, 2.5, 0, 0, 0, 10.4928, -70.453, 3.5, 69.69 )
+
+[node name="CollisionShape" type="CollisionShape" parent="room17"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="room17/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="northWall" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 100, 0, 3, 0, -1, 0, -4.37114e-06, 0, 3.5, -100 )
+
+[node name="CollisionShape" type="CollisionShape" parent="northWall"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="northWall/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="southWall" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 100, 0, 3, 0, -1, 0, -4.37114e-06, 0.426392, 3.5, 97.6404 )
+
+[node name="CollisionShape" type="CollisionShape" parent="southWall"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="southWall/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="westWall" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 100, -98.8092, 3.5, -0.681023 )
+
+[node name="CollisionShape" type="CollisionShape" parent="westWall"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="westWall/CollisionShape"]
+material = SubResource( 3 )
+
+[node name="westWall2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 100, 98.9577, 3.5, -0.547644 )
+
+[node name="CollisionShape" type="CollisionShape" parent="westWall2"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="westWall2/CollisionShape"]
 material = SubResource( 3 )

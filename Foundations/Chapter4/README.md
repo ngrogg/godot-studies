@@ -66,7 +66,15 @@ Change the Uv1 scale as preferred. Books uses 3,2,1.
 
 Duplicate the room1 object to cover the rest of the dark areas of the room.
 
-Next duplicate the room to create a wall.
+Be SURE to keep Gizmo STRICTLY Y only from above!
+Scale, position and hitbox constraints get weird otherwise.
+
+Next duplicate a room to create a wall.
 Set scale to 1,1,100 and transform to 0, 3.5,-100
+
+Wound up using a slightly different Y scale of 3.
+Also had to add a rotation of 90 to Y.
+
+Duplicate/rotate/rename walls as needed to make the other three walls.
 
 ## Post-chapter quiz w/ answers
