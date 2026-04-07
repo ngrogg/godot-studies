@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/ceiling.jpg-cd90f6521bc2f906393acab078c0462f.s3tc.stex"
-path.etc2="res://.import/ceiling.jpg-cd90f6521bc2f906393acab078c0462f.etc2.stex"
+path.s3tc="res://.import/tile.jpg-9bf4ab7fac445e8b17ddc0ec65633778.s3tc.stex"
+path.etc2="res://.import/tile.jpg-9bf4ab7fac445e8b17ddc0ec65633778.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://maze/ceiling.jpg"
-dest_files=[ "res://.import/ceiling.jpg-cd90f6521bc2f906393acab078c0462f.s3tc.stex", "res://.import/ceiling.jpg-cd90f6521bc2f906393acab078c0462f.etc2.stex" ]
+source_file="res://maze/tile.jpg"
+dest_files=[ "res://.import/tile.jpg-9bf4ab7fac445e8b17ddc0ec65633778.s3tc.stex", "res://.import/tile.jpg-9bf4ab7fac445e8b17ddc0ec65633778.etc2.stex" ]
 
 [params]
 

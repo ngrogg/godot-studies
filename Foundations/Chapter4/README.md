@@ -13,7 +13,7 @@ Create a folder in the "FileSystem" tab to hold the scene assets.
 
 Download the asset pack from the site if not done already. This repo has the resource pack.
 
-Copy or move the images "bricks.jpg", "ceiling.jpg", and "gameMap.png" into the maze folder.
+Copy or move the images "bricks.jpg", "ceiling.jpg", "tile.jpg" and "gameMap.png" into the maze folder.
 
 ### Using objects that we can collide with
 Previous chapter created a staircase from boxes, but they had no collision.
@@ -77,4 +77,95 @@ Also had to add a rotation of 90 to Y.
 
 Duplicate/rotate/rename walls as needed to make the other three walls.
 
+### Adding a First-Person COntroller to navigate the scene
+Add a Character Controller
+
+Select "AssetLib" at top middle of screen, search for "First person Controller", select "Simple First Person Controller", select download.
+
+Should download/install.
+
+Item can be found under "FileSystem" tab at res://assets/player/
+
+Drag and drop the "Player.tscn" onto "Spatial" node.
+
+Move node so it's not in or on a wall. Set Y Translation to "1" or whatever puts it above the floor.
+
+Assign keyboard movement
+
+Project > Project Settings > Input Map
+
+Under "Action" add "player_forwards" and choose "Add"
+
+Select "+" next to "player_forwards", select key and enter your move key.
+
+Book uses arrow keys, these notes use WASD
+
+Repeat process for "player_backwards", "player_left" and "player_right".
+
+Finally add "player_jump" with desired key. Book and these notes use Space Bar.
+
+Also added "player_sprint" wht "shift" as debugger threw massive errors without it.
+
+From the scene double check work with "Control + R". Should be able to navigate maze.
+In this review that hotkey didn't work. Used F6 or the "Play Scene" option in upper right of screen.
+
+### Changing the texture of the ground
+"SceenTree" tab, locate object "Ground", select CSGBox node of "Ground", select Material, Albedo
+
+Replace material with "tile.jpg" texture under res://maze/
+
+Change UV1 scaling to 20,20,20
+
+### Adding a ceiling to the maze
+Duplicate object "Ground"
+
+Rename to "Ceiling"
+
+Position to 0,7,0
+
+Replace the texture with the ceiling.jpg texture from res://maze/ under Inspector > Material > Albedo > Texture
+
+### Adding light to the scene
+Add node to Spatial node in "Scene Tree".
+
+Search for "WorldEnvironment", add node
+
+Under Inspector, select WordEnvironment, "New Environment"
+
+Select "Environment", "Ambient Light". Select a white color for the "Color" option
+
+Set ambient light to full darkness.
+
+Select node "WorldEnvironment"
+
+Under Inspector select Environment and put color back to black.
+
+Next set ceiling object to be invisible.
+
+Add child node "Omni Light" to Spatial node, set Y translation to 7.5.
+
+Position it near the player. Remember to use Y view from above to keep Y translation consistent!
+
+Under Inspector locate "Omni" section and change range to 20.
+
+Locate the "Light" section and change energy to 5.
+
+Re-enable the ceiling and test scene.
+
+Temporarily disable ceiling again and copy/move light node to points around the maze.
+
+Once lights are placed, re-enable the ceiling and test again.
+
+During this testing in these notes the WorldEnvironment Ambient light was moved from a black to a very dark brown.
+
 ## Post-chapter quiz w/ answers
+1. The shortcut to move an object is "Q". **False**
+2. THe shortcut to rotate an object is "R". **False**
+3. The "Ambient Lighting" can be modified using the menu "Project Settings". **True**
+4. "Energy" is an attribute of "OmniLights". **True**
+5. If no lights have been added to the scene the scene will be completely dark. **False**, ambient light can be used instead.
+6. New objects are always created at the position 0,0,0. **True**
+7. "UV1" is one of the attributes of texture materials used in a scene. **True**
+8. Once a texture has been applied to an object it cannot be replaced later. **False**
+9. A scalling proper of 1,1,1 means that the picture will be repeated once all the x, y and z axes. **True**
+10. The shortcut "Control + D" is used to delete an object. **False**
