@@ -11,6 +11,7 @@ How to install GoDot and a rundown of GoDot's interface. <br>
 ### Chapter 3: Creating and exporting your first scene
 Creating and exporting a scene in GoDot
 ### Chapter 4: Transforming Built-in Objects to create and indoor scene
+Build a 3d scene with lighting and movement.
 ### Chapter 5: Creating an outdoor scene with Godot's Built-in Terrain generator
 ### Chapter 6: FAQ
 ### Chapter 7: Thank You
