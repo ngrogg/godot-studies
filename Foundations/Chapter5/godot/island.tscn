@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
 [ext_resource path="res://terrainData/data.hterrain" type="Resource" id=3]
 [ext_resource path="res://gameMapOutline.png" type="Texture" id=4]
+[ext_resource path="res://assets/maujoe.basic_water_material/materials/basic_water_material.material" type="Material" id=5]
+[ext_resource path="res://assets/grass.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/sandy_color.png" type="Texture" id=7]
+[ext_resource path="res://assets/3d_car_customizable/car.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/buildings.jpg" type="Texture" id=9]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
 mode = 0
-textures = [ [ ExtResource( 4 ) ], [ null ] ]
+textures = [ [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ], [ null, null, null ] ]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 9 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -29,3 +37,41 @@ shader_params/u_ground_uv_scale = 500.0
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="HTerrain"]
+transform = Transform( 400, 0, 0, 0, 1, 0, 0, 0, 400, 250, -1, 250 )
+material = ExtResource( 5 )
+
+[node name="Car" parent="HTerrain" instance=ExtResource( 8 )]
+transform = Transform( -0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, 282, 1, 190 )
+
+[node name="Camera" type="Camera" parent="HTerrain/Car"]
+transform = Transform( -1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 0, 3, -6 )
+
+[node name="Building" type="CSGBox" parent="HTerrain"]
+transform = Transform( 24.813, 0, 0, 0, 40, 0, 0, 0, 20.393, 274.519, 40, 139.428 )
+material = SubResource( 2 )
+
+[node name="Building2" type="CSGBox" parent="HTerrain"]
+transform = Transform( 10.292, 0, 0, 0, 20, 0, 0, 0, 22.88, 79.364, 20, 59.407 )
+depth = 0.848805
+material = SubResource( 2 )
+
+[node name="Building3" type="CSGBox" parent="HTerrain"]
+transform = Transform( 15.329, 0, 0, 0, 30, 0, 0, 0, 24.341, 314.643, 30, 359.124 )
+depth = 0.848805
+material = SubResource( 2 )
+
+[node name="Building4" type="CSGBox" parent="HTerrain"]
+transform = Transform( 21.239, 0, 0, 0, 20, 0, 0, 0, 34.599, 228.896, 20, 364.277 )
+depth = 0.848805
+material = SubResource( 2 )
+
+[node name="Building5" type="CSGBox" parent="HTerrain"]
+transform = Transform( 19.438, 0, 0, 0, 35, 0, 0, 0, 34.662, 139.415, 35, 414.716 )
+depth = 0.848805
+material = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, 220, 40, 220 )
+visible = false
