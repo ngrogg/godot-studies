@@ -15,6 +15,7 @@ Build a 3d scene with lighting and movement.
 ### Chapter 5: Creating an outdoor scene with Godot's Built-in Terrain generator
 Build a 3d scene with water, elevation and terrain.
 ### Chapter 6: FAQ
+Frequently Asked Questions w/ answers.
 ### Chapter 7: Thank You
 This chapter is skipped as it contains no commands, tutorials or code.
 
