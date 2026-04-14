@@ -5,6 +5,8 @@ Studies based on book series "Godot from Zero to Proficiency".
 
 ## Chapters
 ### Chapter 1: Introduction to programming in GDScript
+Basics of GDScript and some common programming topics as they relate to GDScript.
+
 ### Chapter 2: Creating your first script
 ### Chapter 3: Adding interaction with GDScript
 ### Chapter 4: Creating and updating a user interface from your code
