@@ -53,8 +53,11 @@ func _physics_process(delta):#called 60 times per sec
 	if (Input.is_action_pressed("jump")) and is_on_floor():
 		velocity.y = jumpForce
 		
-		
-
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if (collision.collider.is_in_group("pick_me")):
+			print("Collision with" + collision.collider.name)
+			collision.collider.queue_free()
 	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta
