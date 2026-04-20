@@ -95,5 +95,73 @@ Easiest is probably to set different Translations.
 Test the scene, boxes should disappear when collided with.
 
 ### Adding a scoring system
+Go to script view, add code from book.
+
+Save and test scene.
+
+Should output score as boxes are collided with.
+
 ### Loading a new level based on the score
-### Level roundup
+Duplicate "scene1.tscn", name "scene2.tscn".
+
+Make changes so it's obvious it's a different level.
+
+For this review the map and number of boxes was changed.
+
+Add code to scene1 "Player.gd" script to change level when 3 boxes are collected.
+
+Be aware level 2 will loop when 3 boxes are collected.
+
+### Quiz w/ answers
+1. The function `get_slide_collision` can be used to detect when the player collides with other objects. <br>
+   **TRUE** <br>
+
+2. The following code will print the message "Collided with pick_me" in the output window: <br>
+   `var collision = get_slide_collision(index)` <br>
+   `if (collision.collider.is_in_group("pick_me"):` <br>
+   `    print("Collided with " + collision.collider.name)` <br>
+   **FALSE** (it will display the name of the node) <br>
+
+3. Write the missing line in tyhis code to be able to destroy the object we have collided with: <br>
+   `if (collision.collider.is_in_group("pick_me")):`<br>
+   ` BLANK ` <br>
+   <br>
+   `if (collision.collider.is_in_group("pick_me")):`<br>
+   `    collision.collider.queue_free()`<br>
+
+4. By default, all scenes included in the current project can be opened from a script. <br>
+   **TRUE** <br>
+
+5. Find the error in the following code: <br>
+   `for index in get_the_slide_count():`<br>
+   `    var collision = get_slide_collision(index)`<br>
+   `    if (collision.collider.is_in_group("pick_me")`<br>
+   <br>
+   `for index in get_the_slide_count(): # should read get_slide_count`<br>
+   `    var collision = get_slide_collision(index)`<br>
+   `    if (collision.collider.is_in_group("pick_me")`<br>
+
+6. Any scene selected in the scene tree can be duplicated with the shortcut `control + d`. <br>
+   **TRUE** <br>
+
+7. If the scene `scene4` has been saved at the root of a project (i.e., res://), the following code will load it: <br>
+   `get_tree().change_scene("res://scene4.tscn")` <br>
+   **TRUE** <br>
+
+8. What does the error "The identifier score is not declared in the current scope" mean? <br>
+   A. You used a variable that has not been declared yet. <br>
+   B. You may have forgotten to indent your code. <br>
+   C. A colon was forgotten at the end of a conditional statement. <br>
+   **A** <br>
+
+9. What does the error message ": expected at the end of the line" mean? <br>
+   A. You used a variable that has not been declared yet. <br>
+   B. You may have forgotten to indent your code. <br>
+   C. A semi-colon was forgotten at the end of a statement. <br>
+   **C** <br>
+
+10. If the output window shows errors and you can't seem to be able to play your scene, what can you do? <br>
+    A. Check the code using the error message provided. <br>
+    B. Correct the error. <br>
+    C. All of the above. <br>
+    **C** <br>

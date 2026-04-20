@@ -3,7 +3,8 @@ extends KinematicBody
 #next change scene and update score
 var moveSpeed:float = 5
 var jumpForce:float = 5
-var gravity:float=12
+var gravity:float = 12
+var score:int = 0
 
 
 #camlook
@@ -14,15 +15,10 @@ var velocity:Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 #var scoreUI:RichTextLabel
 
-
 onready var camera :Camera = get_node("Camera")#only when node is initialized
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	
-
-
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -58,6 +54,10 @@ func _physics_process(delta):#called 60 times per sec
 		if (collision.collider.is_in_group("pick_me")):
 			print("Collision with" + collision.collider.name)
 			collision.collider.queue_free()
+			score += 1
+			print("Score: " + str(score))
+			if (score >= 3):
+				get_tree().change_scene("res://scene2.tscn")
 	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta
