@@ -1,8 +1,5 @@
 # Chapter 4: Transforming Built-In Objects to create an indoor scene
 
-## Overview
-Create a maze using shapes and textures. Configure lighting for atmosphere.
-
 ## Notes
 ### Creating and importing the necessary assets
 Create a new scene if using the old project.

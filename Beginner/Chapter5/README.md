@@ -1,7 +1,5 @@
 # Chapter 5: Polishing our game
 
-## Overview
-
 ## Notes
 ### Creating a splash screen for the game
 ### Displaying the score in each scene

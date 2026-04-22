@@ -1,8 +1,5 @@
 # Intermediate
 
-## Overview
-Studies based on book series "Godot from Zero to Proficiency".
-
 ## Chapters
 ### Chapter 1: Adding simple artificial intelligence
 ### Chapter 2: Creating and managing weapons

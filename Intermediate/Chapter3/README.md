@@ -1,7 +1,5 @@
 # Chapter 3: Using Finite State Machines
 
-## Overview
-
 ## Notes
 ### Introduction to finite state machines
 ### Getting started with finite-state machines in Godot

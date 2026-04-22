@@ -1,8 +1,5 @@
 # Foundations
 
-## Overview
-Studies based on book series "Godot from Zero to Proficiency".
-
 ## Chapters
 ### Chapter 1: Benefits of using Godot
 This chapter is skipped as it contains no commands, tutorials or code.

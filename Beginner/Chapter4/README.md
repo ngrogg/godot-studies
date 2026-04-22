@@ -1,7 +1,5 @@
 # Chapter 4: Creating and updating a User Interface from your code
 
-## Overview
-
 ## Notes
 ### Setting up a the scene
 ### Creating a timer

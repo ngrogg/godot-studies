@@ -1,7 +1,5 @@
 # Chapter 1: Adding simple artificial intelligence
 
-## Overview
-
 ## Notes
 ### Resources necessary for this chapter
 ### Instantiating projectiles

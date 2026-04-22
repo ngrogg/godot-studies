@@ -1,8 +1,5 @@
 # Chapter 5: Creating an Outdoor Scene with Godot's Built-in terrain generator
 
-## Overview
-Create an outdoor scene with water, terrain, elevation changes, and a car character to interact with it.
-
 ## Notes
 ### Importing necessary assets
 Create a scene

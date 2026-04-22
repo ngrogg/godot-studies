@@ -1,8 +1,5 @@
 # Chapter 1: Introduction to Programming in GDScript
 
-## Overview
-OOP basics as they apply to GDScript
-
 ## Notes
 ### Introduction
 Covers the following: <br>

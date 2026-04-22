@@ -1,7 +1,5 @@
 # Chapter 3: Adding Interaction with GDScript
 
-## Overview
-
 ## Notes
 ### Resources necessary for this chapter
 Download resource pack for chapter if not already done.

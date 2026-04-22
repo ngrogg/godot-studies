@@ -1,7 +1,5 @@
 # Chapter 2: Creating your First Script
 
-## Overview
-
 ## Notes
 ### Quick overview of the interface
 This is a review of the GoDot Engine interface.

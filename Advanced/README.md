@@ -1,8 +1,5 @@
 # Advanced
 
-## Overview
-Studies based on book series "Godot from Zero to Proficiency".
-
 ## Chapters
 ### Chapter 1: Reading files and creating scenes procedurally
 ### Chapter 2: Accessing and updating a database

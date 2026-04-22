@@ -1,8 +1,5 @@
 # Chapter 2: Installing Godot and becoming familiar with the interface
 
-## Overview
-How to install and use Godot's interface.
-
 ## Notes
 ### Installing GoDot
 This review was done on a machine running `Pop OS 24`. To install Godot run the following command: <br>

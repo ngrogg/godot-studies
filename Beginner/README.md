@@ -1,8 +1,5 @@
 # Beginner
 
-## Overview
-Studies based on book series "Godot from Zero to Proficiency".
-
 ## Chapters
 ### Chapter 1: Introduction to programming in GDScript
 Basics of GDScript and some common programming topics as they relate to GDScript.

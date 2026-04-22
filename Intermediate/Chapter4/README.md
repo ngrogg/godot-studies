@@ -1,7 +1,5 @@
 # Chapter 4: More Artificial Intelligence
 
-## Overview
-
 ## Notes
 ### Adding obstacles for the NPC to avoid
 ### Making it possible for the NPC to follow a path

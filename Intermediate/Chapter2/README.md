@@ -1,7 +1,5 @@
 # Chapter 2: Creating and Managing Weapons
 
-## Overview
-
 ## Notes
 ### Setting-up the environment
 ### Detecing objects ahead using raycasting

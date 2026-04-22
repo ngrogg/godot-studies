@@ -1,8 +1,5 @@
 # Proficient
 
-## Overview
-Studies based on book series "Godot from Zero to Proficiency".
-
 ## Chapters
 ### Chapter 1: Introduction to the rpg genre, key features and design concepts
 ### Chapter 2: Creating and animating the main character
