@@ -5,7 +5,7 @@ var moveSpeed:float = 5
 var jumpForce:float = 5
 var gravity:float = 12
 var score:int = 0
-
+var nb_petrol_can:int = 0
 
 #camlook
 var minLookAngle:float = -90
@@ -16,9 +16,13 @@ var mouseDelta: Vector2 = Vector2()
 #var scoreUI:RichTextLabel
 
 onready var camera :Camera = get_node("Camera")#only when node is initialized
+onready var user_message_ui:Label = get_node("../userMessageUI")
+onready var timer:Timer = get_node("../Timer")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	user_message_ui.set_text("")
+	timer.set_wait_time(2)
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -51,13 +55,36 @@ func _physics_process(delta):#called 60 times per sec
 		
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
-		if (collision.collider.is_in_group("pick_me")):
-			print("Collision with" + collision.collider.name)
+		if (collision.collider.is_in_group("pick_me") 
+		|| collision.collider.is_in_group("petrol-can")
+		|| collision.collider.is_in_group("plane")):
+			#print("Collision with" + collision.collider.name)
 			collision.collider.queue_free()
+			user_message_ui.set_text("Box Collected")
+			timer.start()
 			score += 1
-			print("Score: " + str(score))
-			if (score >= 3):
-				get_tree().change_scene("res://scene2.tscn")
+			#print("Score: " + str(score))
+			if (collision.collider.is_in_group("petrol-can")):
+				nb_petrol_can += 1
+				if (nb_petrol_can == 1):
+					user_message_ui.set_text(str(nb_petrol_can) + " Can Collected")
+				else:
+					user_message_ui.set_text(str(nb_petrol_can) + " Cans Collected")
+			elif (collision.collider.is_in_group("plane")):
+				if (nb_petrol_can <3): 
+					user_message_ui.set_text("Sorry, you need 3 cans to fly the plane...")
+				else:
+					user_message_ui.set_text("Congratulations you can fly the plane!")
+			else:
+				if (score == 1):
+					user_message_ui.set_text(str(score) + " Box Collected")
+				else:
+					user_message_ui.set_text(str(score) + " Boxes Collected")
+			if (score == 3):
+				get_node("../maze").queue_free()
+				var new_scene = load("res://level2.tscn").instance()
+				get_parent().add_child(new_scene)
+				get_node("../timer").counter = 0
 	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta
@@ -72,3 +99,8 @@ func _input(event):
 	#print("Test")
 	if event is InputEventMouseMotion	:
 		mouseDelta = event.relative
+
+
+func _on_Timer_timeout():
+	user_message_ui.set_text("")
+	timer.stop()

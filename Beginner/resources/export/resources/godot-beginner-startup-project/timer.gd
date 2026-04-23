@@ -27,5 +27,5 @@ func _process(delta):
 		if (counter > 118):
 			user_message_ui.set_text("Time Almost Up")
 		if (counter > 120):
-			print("Time Up!")
+			#print("Time Up!")
 			get_tree().change_scene("res://scene1.tscn")
