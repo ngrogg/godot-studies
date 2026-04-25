@@ -7,6 +7,7 @@
 ### Chapter 4: Creating a memory game
 ### Chapter 5: Creating a platformer
 ### Chapter 6: FAQ
+Frequently Asked Questions w/ answers.
 ### Chapter 7: Thank You
 This chapter is skipped as it contains no commands, tutorials or code.
 

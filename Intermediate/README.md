@@ -6,6 +6,7 @@
 ### Chapter 3: Using finite state machines
 ### Chapter 4: More artificial intelligence
 ### Chapter 5: FAQ
+Frequently Asked Questions w/ answers.
 ### Chapter 6: Creating and exporting multiple animations with Mixamo
 ### Chapter 7: Thank you
 This chapter is skipped as it contains no commands, tutorials or code.

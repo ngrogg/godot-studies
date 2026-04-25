@@ -14,7 +14,10 @@ Adding a GDScript to a project.
 Creating and updating a dynamic GUI with GDScript
 
 ### Chapter 5: Polishing our game
+Adding common game features like a map and music.
+
 ### Chapter 6: FAQ
+Frequently Asked Questions w/ answers.
 
 ## Book Information
 Name: Godot from Zero to Proficiency (Beginner) <br>
