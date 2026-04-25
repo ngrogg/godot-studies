@@ -15,14 +15,28 @@ var velocity:Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 #var scoreUI:RichTextLabel
 
+# UI Variables
 onready var camera :Camera = get_node("Camera")#only when node is initialized
 onready var user_message_ui:Label = get_node("../userMessageUI")
 onready var timer:Timer = get_node("../Timer")
+onready var scoreUI:Label = get_node("../scoreUI")
+var petrol_can1:TextureRect
+var petrol_can2:TextureRect
+var petrol_can3:TextureRect
+## Music variables
+onready var beep_sound:AudioStreamPlayer = get_node("AudioStreamPlayer")
+onready var bg_sound:AudioStreamPlayer = get_node("../bgSound")
+var sound_is_on:bool = true
+## Map variable
+onready var viewport_container:ViewportContainer = get_node("../ViewportContainer")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	user_message_ui.set_text("")
 	timer.set_wait_time(2)
+	scoreUI.set_text("Score: " + str(score))
+	# ALways show mouse
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -48,7 +62,6 @@ func _physics_process(delta):#called 60 times per sec
 	velocity.y -=gravity*delta;#every second we remove delta
 	velocity=  move_and_slide(velocity, Vector3.UP);
 	
-	
 	pass
 	if (Input.is_action_pressed("jump")) and is_on_floor():
 		velocity.y = jumpForce
@@ -63,9 +76,15 @@ func _physics_process(delta):#called 60 times per sec
 			user_message_ui.set_text("Box Collected")
 			timer.start()
 			score += 1
+			beep_sound.play()
+			scoreUI.set_text("Score: " + str(score))
 			#print("Score: " + str(score))
 			if (collision.collider.is_in_group("petrol-can")):
 				nb_petrol_can += 1
+				match nb_petrol_can: 
+					1:petrol_can1.visible = true
+					2:petrol_can2.visible = true
+					3:petrol_can3.visible = true
 				if (nb_petrol_can == 1):
 					user_message_ui.set_text(str(nb_petrol_can) + " Can Collected")
 				else:
@@ -74,7 +93,8 @@ func _physics_process(delta):#called 60 times per sec
 				if (nb_petrol_can <3): 
 					user_message_ui.set_text("Sorry, you need 3 cans to fly the plane...")
 				else:
-					user_message_ui.set_text("Congratulations you can fly the plane!")
+					#user_message_ui.set_text("Congratulations you can fly the plane!")
+					get_tree().change_scene("res://ending_scene.tscn")
 			else:
 				if (score == 1):
 					user_message_ui.set_text(str(score) + " Box Collected")
@@ -83,7 +103,9 @@ func _physics_process(delta):#called 60 times per sec
 			if (score == 3):
 				get_node("../maze").queue_free()
 				var new_scene = load("res://level2.tscn").instance()
+				new_scene.set_name("level2")
 				get_parent().add_child(new_scene)
+				init_ui_level2()
 				get_node("../timer").counter = 0
 	
 func _process(delta):#not physics related
@@ -99,8 +121,26 @@ func _input(event):
 	#print("Test")
 	if event is InputEventMouseMotion	:
 		mouseDelta = event.relative
+	# Mute/Unmute music
+	if Input.is_key_pressed(KEY_P):
+		if (sound_is_on): 
+			bg_sound.stop()
+		else: 
+			bg_sound.play()
+		sound_is_on = ! sound_is_on
+	# Show/Hide minimap
+	if Input.is_key_pressed(KEY_M):
+		viewport_container.visible = ! viewport_container.visible
 
 
 func _on_Timer_timeout():
 	user_message_ui.set_text("")
 	timer.stop()
+
+func init_ui_level2():
+	petrol_can1 = get_node("../level2/petrol_can1_ui")
+	petrol_can2 = get_node("../level2/petrol_can2_ui")
+	petrol_can3 = get_node("../level2/petrol_can3_ui")
+	petrol_can1.visible = false
+	petrol_can2.visible = false
+	petrol_can3.visible = false
