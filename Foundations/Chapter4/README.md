@@ -101,7 +101,7 @@ Repeat process for "player_backwards", "player_left" and "player_right".
 
 Finally add "player_jump" with desired key. Book and these notes use Space Bar.
 
-Also added "player_sprint" wht "shift" as debugger threw massive errors without it.
+Also added "player_sprint" with "shift" as debugger threw massive errors without it.
 
 From the scene double check work with "Control + R". Should be able to navigate maze.
 In this review that hotkey didn't work. Used F6 or the "Play Scene" option in upper right of screen.
