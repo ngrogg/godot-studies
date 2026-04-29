@@ -20,12 +20,12 @@ onready var camera :Camera = get_node("Camera")#only when node is initialized
 # Variable for score
 var score = 0 
 
+# Variable for on-screen message
+onready var user_message:Label = get_node("../message")
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	
-
-
+	user_message.set_text("")
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -51,18 +51,22 @@ func _physics_process(delta):#called 60 times per sec
 	velocity.y -=gravity*delta;#every second we remove delta
 	velocity=  move_and_slide(velocity, Vector3.UP);
 	
-	
 	pass
 	if (Input.is_action_pressed("jump")) and is_on_floor():
 		velocity.y = jumpForce
 	
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
+		## Collect spheres, iterate score
 		if (collision.collider.is_in_group("collect")):
 			print("Collision with " + collision.collider.name)
 			score += 1
 			print("score " + str(score))
 			collision.collider.queue_free()
+		## Else if all spheres collected display end game message
+		elif (collision.collider.name == "end" && score == 4):
+			print("Congratulations")
+			user_message.set_text("CONGRATULATIONS")
 	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta

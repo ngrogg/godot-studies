@@ -130,5 +130,50 @@ Edit "launcher.gd" with code from book.
 Should be able to restart level when hit by ball.
 
 ### Detecting when the player has reached the end of the game
+Open script "Player.gd" and add code from book.
 
-### Level Roundup
+Add child node of type "Label" to the "player" node.
+
+Rename node to "message"
+
+Under "Inspector" > "Control" > "Rect" set X/Y size
+
+Under "Inspector" > "Label" set Align and V Align
+
+Under "Inspector" > "Control" > "Theme Overrides" > "Fonts" add "New DynamicFont"
+
+Edit and under "Font" add font from "FileSystem"
+
+Per this review the "Label" node had to be moved out from the "player" node to the root "Spatial" node...
+
+### Quiz with answers
+1. The event "body_entered" is called whenever a collision occurs between a "RigidBody" node and another node.
+   **TRUE**
+2. To be able to access a variable from a script through the Inspector, this variable can be declared preceded by the keyword "export"
+   **TRUE**
+3. Write the missing line in this code to be able to destroy the object we have collided with, assuming that this object is referred to as "body": <br>
+   `func ball_collision(body):`<br>
+   `    <MISSING CODE>`<br>
+   `    body.queue_free()`<br>
+4. A node can be saved as a separate scene and re-used in any other scene.
+   **TRUE**
+5. A collision shape can be used to detect collision with a node.
+   **TRUE**
+6. Find one error in the following code: <br>
+   `_ready () # Should be func _ready():`<br>
+   `{`<br>
+   `    var score_int = 0;`<br>
+   `    get_the_node("../Label").set_text(""); # Should be get_node`<br>
+   `}`<br>
+7. And object selected in the "Hierarchy" window can be duplicated using the shortcut "CTRL+D"
+   **TRUE**
+8. If the node attached to the next script is a "Rigidbody", the following code will access this nodes' velocity: <br>
+   `linear_velocity = transform.basis.xform(Vector3.FORWARD)*(20)`<br>
+   **FALSE**, the second parameter is missing; it could instead be: <br>
+   `new_ball.linear_velocity = transform.basis.xform(Vector3.FORWARD)*(20)`<br>
+9. The following code will cause the current node to look towards the node called player: <br>
+   `look_at_the_node(get_node("../player").global_transform.origin,Vector3.UP)`<br>
+   **FALSE**, it should be "look_at_node".
+   `look_at_node(get_node("../player").global_transform.origin,Vector3.UP)`<br>
+10. The method "is_in_group" can be used to determine if a node is part of a specific group.
+    **TRUE**
