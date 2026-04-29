@@ -83,6 +83,51 @@ Add code from book to "launder.gd".
 Test scene, if a ball touches the player a message should display in the Output window.
 
 ### Finishing our first game
+Add a child node of type "StaticBody" to the root node "Spatial".
+
+Rename node to "sphere1"
+
+Add a child node of type "CollisionShape" to node "sphere1", set it's shape to "sphere"
+
+Add a child node of type "CSGSphere" to node "CollisionShape", set it's color to red.
+
+Set "Translation" Y to 1.5 so it's above the ground and visible.
+
+Under "Node" > "Groups" add node to group "collect".
+
+Duplicate and position between player and launcher.
+
+Open "Player.gd" script attached to player node.
+
+Add code from book.
+
+Test scene, should be able to collide with spheres.
+
+Return to 3d view
+
+Create a child node of type "StaticBody" to the root node "Spatial".
+
+Name the node "start".
+
+Add a child node of type "CollisionShape" to the node "start" and set it's shape to a cylinder.
+
+Add a child node of type "CSGCylinder" as a child of the node "CollisionShape" and change it's color to green.
+
+Set "Scale" to 2,0.2,2
+
+Set "Translation" Y to 1.2
+
+Duplicate "start" node, rename to "end", change material and color to "red".
+
+Save launcher "branch" node as a scene.
+
+Add to root node "spatial" as an child scene.
+
+Position the new launchers close to the spheres.
+
+Edit "launcher.gd" with code from book.
+
+Should be able to restart level when hit by ball.
 
 ### Detecting when the player has reached the end of the game
 

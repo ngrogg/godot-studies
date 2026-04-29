@@ -53,7 +53,10 @@ func throw_projectile():
 # Function for collision
 func ball_collision(body):
 	if (body.name == "player"):
-		print("hit player")
+		print("collision")
+		if (body.name == "player"):
+			get_node("../player").transform.origin = get_node("../start").transform.origin +Vector3.UP
+			print("hit player")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
