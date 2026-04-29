@@ -41,6 +41,47 @@ Add "jump" and bind to space.
 
 Test scene.
 
+Add child node of type "CSGBox" to root node "Spatial" and rename it "launcher".
+
+Position it up and away from the player via Transform.
+
+Create a child node of type "RigidBody" to root node "Spatial" and rename it "ball".
+
+Set position (Translation) to 0,0,0.
+
+Add a CollisionShape node as a child of the "ball" node.
+
+Under "Inspector" set it's scale settings to 0.2,0.2,0.2
+
+Also set "Collision Shape" to "New SphereShape".
+
+Add a child node of type "CSGSphere" to the node "CollisionShape".
+
+Save "ball" node as a scene so it can be reused.
+
+Attach "launcher.gd" script to "launcher" node.
+
+Add code from book.
+
+Return to 3D view, select the "launcher" node.
+
+Under "Inspector" > "Script Variables", drag and drop the ball scene.
+
+Test the scene, launcher should drop a ball when the "O" key is pressed.
+
+Add code from book to launcher script.
+
+Test scene. Created balls should disappear in a few seconds.
+
+Add additional code from book.
+
+Launcher should now look at player, balls should have motion, and scene should throw balls on a timer.
+
+### Managing Collision
+Add code from book to "launder.gd".
+
+Test scene, if a ball touches the player a message should display in the Output window.
+
 ### Finishing our first game
 
 ### Detecting when the player has reached the end of the game
