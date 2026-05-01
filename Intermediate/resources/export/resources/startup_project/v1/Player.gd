@@ -17,6 +17,9 @@ var mouseDelta: Vector2 = Vector2()
 
 onready var camera :Camera = get_node("Camera")#only when node is initialized
 
+# Variable for raycasting
+var ray:RayCast
+
 # Variable for score
 var score = 0 
 
@@ -25,7 +28,13 @@ onready var user_message:Label = get_node("../message")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Set message to null
 	user_message.set_text("")
+	# Create new raycast variable
+	ray = RayCast.new()
+	ray.enabled = true
+	camera.add_child(ray)
+	ray.cast_to = Vector3(0,0,-100)
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -39,6 +48,10 @@ func _physics_process(delta):#called 60 times per sec
 		input.x+=1		
 	if Input.is_action_pressed("move_right"):
 		input.x-=1		
+	if (Input.is_action_just_pressed("fire")): 
+		if ray.is_colliding():
+			var obj = ray.get_collider()
+			print("The object " + obj.get_name() + " is in front of the player")
 	input.normalized();
 	
 	var forward = global_transform.basis.z;
