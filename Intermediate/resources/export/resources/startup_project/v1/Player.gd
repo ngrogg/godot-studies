@@ -26,6 +26,9 @@ var score = 0
 # Variable for on-screen message
 onready var user_message:Label = get_node("../message")
 
+# Ammo for gun
+var gun_ammo = 10
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Set message to null
@@ -48,10 +51,15 @@ func _physics_process(delta):#called 60 times per sec
 		input.x+=1		
 	if Input.is_action_pressed("move_right"):
 		input.x-=1		
-	if (Input.is_action_just_pressed("fire")): 
+	# Fire if fire button is pressed and there's ammo
+	if (Input.is_action_just_pressed("fire") && gun_ammo > 0): 
 		if ray.is_colliding():
+			gun_ammo -= 1
 			var obj = ray.get_collider()
 			print("The object " + obj.get_name() + " is in front of the player")
+			print("you have " + str(gun_ammo) + " ammunition left")
+			if (obj.is_in_group("target")):
+				obj.got_hit()
 	input.normalized();
 	
 	var forward = global_transform.basis.z;
@@ -80,6 +88,11 @@ func _physics_process(delta):#called 60 times per sec
 		elif (collision.collider.name == "end" && score == 4):
 			print("Congratulations")
 			user_message.set_text("CONGRATULATIONS")
+		elif (collision.collider.is_in_group("ammo_gun")):
+			gun_ammo += 5
+			if (gun_ammo == 10):
+				gun_ammo = 10
+			collision.collider.queue_free()
 	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta

@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://texture_05.png" type="Texture" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://crossHair.png" type="Texture" id=3]
+[ext_resource path="res://crosshair.gd" type="Script" id=4]
 [ext_resource path="res://BebasNeue-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://ManageNPC.gd" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -30,6 +33,15 @@ shape = SubResource( 1 )
 [node name="CSGBox" type="CSGBox" parent="ground/CollisionShape"]
 material = SubResource( 2 )
 
+[node name="ammo" type="StaticBody" parent="." groups=["ammo_gun"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.833, 2, 25.532 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ammo"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="ammo/CollisionShape"]
+material = SubResource( 2 )
+
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.994308, -4.35178e-08, -0.106542, -3.81751e-08, 1, -5.21855e-08, 0.106542, -4.78212e-08, -0.994308, -6.02271, 0, 39.8876 )
 
@@ -41,8 +53,9 @@ text = "TEST"
 align = 1
 valign = 1
 
-[node name="target1" type="StaticBody" parent="."]
+[node name="target1" type="StaticBody" parent="." groups=["target"]]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target1"]
 shape = SubResource( 9 )
@@ -50,8 +63,9 @@ shape = SubResource( 9 )
 [node name="CSGBox" type="CSGBox" parent="target1/CollisionShape"]
 material = SubResource( 10 )
 
-[node name="target2" type="StaticBody" parent="."]
+[node name="target2" type="StaticBody" parent="." groups=["target"]]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 0, 10.0703, 5, 0.0262924 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target2"]
 shape = SubResource( 9 )
@@ -59,8 +73,9 @@ shape = SubResource( 9 )
 [node name="CSGBox" type="CSGBox" parent="target2/CollisionShape"]
 material = SubResource( 10 )
 
-[node name="target3" type="StaticBody" parent="."]
+[node name="target3" type="StaticBody" parent="." groups=["target"]]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 0, -9.99141, 5, 0.0525864 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target3"]
 shape = SubResource( 9 )
@@ -68,13 +83,22 @@ shape = SubResource( 9 )
 [node name="CSGBox" type="CSGBox" parent="target3/CollisionShape"]
 material = SubResource( 10 )
 
-[node name="target4" type="StaticBody" parent="."]
+[node name="target4" type="StaticBody" parent="." groups=["target"]]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 0, -19.9828, 5, -0.0262923 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target4"]
 shape = SubResource( 9 )
 
 [node name="CSGBox" type="CSGBox" parent="target4/CollisionShape"]
 material = SubResource( 10 )
+
+[node name="crosshair" type="TextureRect" parent="."]
+margin_left = 356.0
+margin_top = 136.0
+margin_right = 668.0
+margin_bottom = 448.0
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [editable path="player"]

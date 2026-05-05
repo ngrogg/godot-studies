@@ -46,7 +46,50 @@ Book uses "F", tried mouse button but it's not recognized...
 Test scene, when facing target a message should be printed to console.
 
 ### Creating a weapon
+Create child node of type "TextureRect" on root node "Spatial", rename node to "crosshair".
+
+Drag the "crosshair.png" from "FileSystem" to the "Texture" attribute under "Inspector".
+
+Move Crosshair to middle of screen, "TEST" font should be about centered.
+
+Test scene, should be able to "fire" at the targets more accurately.
+
+Attach a script to the "crosshair" node, same name should be fine.
+
+Add code from book.
+
+Test scene, crosshair should be perfect and weapon should have ammo.
+
+### Managing Damage
+Select "target1" node, attach script, add script "ManageNPC.gd"
+
+Add code from book.
+
+Once scripts modified, attach script to other targets.
+
+On production code, this script should be made before the targets are duplicated so this would only need done once.
+
+Create a group "target" and apply to all targets.
+
+Increase ammo in "Player.gd", should be less than the amount needed to remove all targets!
+
+Test scene, should be able to fire on targets and they should disappear once their health hits 0.
+
+### Collecting and Managing ammunition
+Duplicate node "ground" and rename to "ammo".
+
+Change "scale" to 1,1,1.
+
+Move slightly above ground.
+
+Create new group (or "tag") "ammo_gun" and apply to cube.
+
+Add code from book to "Player.gd".
+
 ### Building a weapon management system with classes
+
 ### Managing the collection of ammunition
+
 ### Creating a grenade launcher
+
 ### Quiz with answers
