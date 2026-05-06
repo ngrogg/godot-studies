@@ -87,6 +87,43 @@ Create new group (or "tag") "ammo_gun" and apply to cube.
 Add code from book to "Player.gd".
 
 ### Building a weapon management system with classes
+Add script "Weapon.gd", add code from book.
+
+Should have a constructor and classes to increase/decrease ammo.
+
+Add script "WeaponInventory.gd", add code from book.
+
+Should have constructor and functions to access Weapon class variables.
+
+Open script "Player.gd", add code.
+
+Open "Project" > "Project Settings" > "Input Map"
+
+Type "change_weapon" in the action field and click "Add".
+
+Add "Tab" as key for action.
+
+Save and test scene. Should be able to change weapons with TAB.
+
+Open "Player.gd", add code from book.
+
+Should be able to reload.
+
+Select node "player"
+
+Add a child node of type "AudioStreamPlayer" to node "player".
+
+Rename child node to "sound_fx"
+
+Under "Properties" add "gunshot" file from "FileSystem" to "Stream" property.
+
+Add code from book to "Player.gd".
+
+Resize/reposition node "message" in 2d view so it covers a rectangle under to reticle.
+
+Add code to "Player.gd" from book.
+
+Should be able to see active weapon and how much ammo is in weapon.
 
 ### Managing the collection of ammunition
 

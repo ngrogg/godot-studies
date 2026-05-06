@@ -14,7 +14,6 @@ var velocity:Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
 #var scoreUI:RichTextLabel
 
-
 onready var camera :Camera = get_node("Camera")#only when node is initialized
 
 # Variable for raycasting
@@ -29,6 +28,14 @@ onready var user_message:Label = get_node("../message")
 # Ammo for gun
 var gun_ammo = 10
 
+# Weapon class variables
+var inventory : WeaponInventory
+var reload_timer : Timer
+var can_shoot = true
+
+# Sound effect variable
+onready var sound_fx:AudioStreamPlayer = get_node("sound_fx")
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Set message to null
@@ -38,6 +45,11 @@ func _ready():
 	ray.enabled = true
 	camera.add_child(ray)
 	ray.cast_to = Vector3(0,0,-100)
+	# Weapon + Timer class 
+	reload_timer = Timer.new()
+	add_child(reload_timer)
+	reload_timer.connect("timeout",self,"reload_timer_timeout")
+	inventory = WeaponInventory.new()
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -52,14 +64,21 @@ func _physics_process(delta):#called 60 times per sec
 	if Input.is_action_pressed("move_right"):
 		input.x-=1		
 	# Fire if fire button is pressed and there's ammo
-	if (Input.is_action_just_pressed("fire") && gun_ammo > 0): 
-		if ray.is_colliding():
-			gun_ammo -= 1
-			var obj = ray.get_collider()
-			print("The object " + obj.get_name() + " is in front of the player")
-			print("you have " + str(gun_ammo) + " ammunition left")
-			if (obj.is_in_group("target")):
-				obj.got_hit()
+	if (Input.is_action_pressed("fire")):
+		var condition1 = (inventory.weapon_index == Weapon.TYPE_GUN)
+		var condition2 = (inventory.weapon_index == Weapon.TYPE_AUTO_GUN)
+		var condition3 = inventory.has_ammo_for_current()
+		var condition4 = can_shoot
+		if ((condition1 || condition2) && condition3 && condition4):
+			inventory.decrease_curr_ammo()
+			can_shoot=false
+			reload_timer.wait_time = inventory.get_curr_reload_time()
+			reload_timer.start()
+			sound_fx.play()
+			if ray.is_colliding():
+				var obj = ray.get_collider()
+				if (obj.is_in_group("target")):
+					obj.got_hit()
 	input.normalized();
 	
 	var forward = global_transform.basis.z;
@@ -94,6 +113,14 @@ func _physics_process(delta):#called 60 times per sec
 				gun_ammo = 10
 			collision.collider.queue_free()
 	
+	if (Input.is_action_just_pressed("change_weapon")):
+		inventory.change_weapon()
+		var message = inventory.get_curr_weapon_name()
+		message += "(" + str(inventory.get_curr_weapon_ammos()) + ")"
+		print(message)
+		user_message.set_text(message)
+		reload_timer.wait_time=inventory.get_curr_reload_time()
+	
 func _process(delta):#not physics related
 	camera.rotation_degrees.x -= mouseDelta.y*sensitivity*delta
 	
@@ -107,3 +134,8 @@ func _input(event):
 	#print("Test")
 	if event is InputEventMouseMotion	:
 		mouseDelta = event.relative
+
+# Reload timer
+func reload_timer_timeout():
+	can_shoot = true
+	reload_timer.stop()
