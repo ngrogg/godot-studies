@@ -126,7 +126,66 @@ Add code to "Player.gd" from book.
 Should be able to see active weapon and how much ammo is in weapon.
 
 ### Managing the collection of ammunition
+Open "Player.gd", add code from book.
+
+Under "3D" add the "box_texture.jpg" from "FileSystem" to new "SpatialMaterial" on node "CSGBox" on node "ammo".
+
+Don't just replace the texture as it's a duplicate of the "ground" node and will change the map as well!
+
+Re-open "Player.gd" in script view, add code from book.
+
+Save and test scene.
+
+Under 3d duplicate the node "ammo" and rename to "ammo_gun".
+
+Change node group to "ammo_automatic_gun". Remove the default "ammo_gun" group.
+
+Move away from default "ammo" node if not already done.
+
+Add new spatial material, drag and drop "box_texture_auto_gun.jpg" to texture on "ammo_gun" node.
+
+Change "UV1" x scale under "Inspector" to -1 to fix reversed font.
+
+Repeat process for an "ammo_grenade" node and group.
+
+Add texture "box_texture_grenade.jpg".
+
+Lastly change texture for base "ammo" node to use "box_texture_gun".
+
+Save as scenes for re-use later.
+
+Create "ammo_gun", "ammo_auto" and "ammo_grenade".
 
 ### Creating a grenade launcher
+
+Create a new scene, select "Other Node" and choose type "RigidBody".
+
+Name node "grenade".
+
+Add a "collisionShape" node as a child to node "grenade".
+
+Under "Inspector" set shape to "CapsuleShape"
+
+Set Scale to .2, .3, .2
+
+Finally add a "CSGSphere" node as a child to node "CollisionShape" node.
+
+Save scene as "grenade.tscn".
+
+Attach script to node "grenade", default name "grenade.gd" is fine.
+
+Add code from book.
+
+Re-open Player.gd, add code from book.
+
+Open "training_camp" scene, select the node "Player"
+
+Drag and drop the "grenade.tscn" scene from the "FileSystem" window to the new "Script Variables" menu.
+
+Once that's done add additional code from book to the "Player.gd" script.
+
+Save and test scene. Should be able to remove targets with grenades.
+
+^^ Code doesn't work. At this point I'm done fixing this books jank...
 
 ### Quiz with answers

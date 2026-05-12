@@ -1,4 +1,5 @@
 extends KinematicBody
+export (PackedScene) var grenade
 
 #next change scene and update score
 var moveSpeed:float = 5
@@ -50,6 +51,7 @@ func _ready():
 	add_child(reload_timer)
 	reload_timer.connect("timeout",self,"reload_timer_timeout")
 	inventory = WeaponInventory.new()
+	update_UI()
 
 func _physics_process(delta):#called 60 times per sec
 	velocity.x = 0
@@ -69,8 +71,10 @@ func _physics_process(delta):#called 60 times per sec
 		var condition2 = (inventory.weapon_index == Weapon.TYPE_AUTO_GUN)
 		var condition3 = inventory.has_ammo_for_current()
 		var condition4 = can_shoot
+		var condition5 = (inventory.weapon_index == Weapon.TYPE_GRENADE)
 		if ((condition1 || condition2) && condition3 && condition4):
 			inventory.decrease_curr_ammo()
+			update_UI()
 			can_shoot=false
 			reload_timer.wait_time = inventory.get_curr_reload_time()
 			reload_timer.start()
@@ -79,6 +83,18 @@ func _physics_process(delta):#called 60 times per sec
 				var obj = ray.get_collider()
 				if (obj.is_in_group("target")):
 					obj.got_hit()
+		elif (condition5 && condition3 && condition4):
+			inventory.decrease_curr_ammo()
+			var new_grenade = grenade.instance()
+			can_shoot = false
+			reload_timer.wait_time = inventory.get_curr_reload_time()
+			reload_timer.start()
+			get_node("../../Spatial").add_child(new_grenade)
+			var zPos = global_transform.basis.z
+			var xPos = global_transform.basis.x
+			new_grenade.global.transform.origin += get_global_transform().origin
+			new_grenade.global.transform.origin += transform.basis.xform(Vector3(0,2,1))
+			new_grenade.linear_velocity = transform.basis.xform(Vector3.FORWARD)*(-20)
 	input.normalized();
 	
 	var forward = global_transform.basis.z;
@@ -107,18 +123,28 @@ func _physics_process(delta):#called 60 times per sec
 		elif (collision.collider.name == "end" && score == 4):
 			print("Congratulations")
 			user_message.set_text("CONGRATULATIONS")
+		#elif (collision.collider.is_in_group("ammo_gun")):
+		#	gun_ammo += 5
+		#	if (gun_ammo == 10):
+		#		gun_ammo = 10
+		#	collision.collider.queue_free()
 		elif (collision.collider.is_in_group("ammo_gun")):
-			gun_ammo += 5
-			if (gun_ammo == 10):
-				gun_ammo = 10
+			inventory.weapons[Weapon.TYPE_GUN].increase_ammo(10)
 			collision.collider.queue_free()
-	
+		elif (collision.collider.is_in_group("ammo_auto_gun")):
+			inventory.weapons[Weapon.TYPE_AUTO_GUN].increase_ammo(10)
+			collision.collider.queue_free()
+		elif (collision.collider.is_in_group("ammo_grenade")):
+			inventory.weapons[Weapon.TYPE_GRENADE].increase_ammo(10)
+			collision.collider.queue_free()
+			
 	if (Input.is_action_just_pressed("change_weapon")):
 		inventory.change_weapon()
-		var message = inventory.get_curr_weapon_name()
-		message += "(" + str(inventory.get_curr_weapon_ammos()) + ")"
-		print(message)
-		user_message.set_text(message)
+		update_UI()
+		#var message = inventory.get_curr_weapon_name()
+		#message += "(" + str(inventory.get_curr_weapon_ammos()) + ")"
+		#print(message)
+		#user_message.set_text(message)
 		reload_timer.wait_time=inventory.get_curr_reload_time()
 	
 func _process(delta):#not physics related
@@ -139,3 +165,9 @@ func _input(event):
 func reload_timer_timeout():
 	can_shoot = true
 	reload_timer.stop()
+
+# Update UI with ammo count
+func update_UI():
+	var message = inventory.get_curr_weapon_name()
+	message += "(" + str(inventory.get_curr_weapon_ammos()) + ")"
+	user_message.set_text(message)

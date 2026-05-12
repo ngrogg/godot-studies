@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://texture_05.png" type="Texture" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://BebasNeue-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ManageNPC.gd" type="Script" id=6]
 [ext_resource path="res://gunshot.wav" type="AudioStream" id=7]
+[ext_resource path="res://ammo_auto.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ammo_gun.tscn" type="PackedScene" id=9]
+[ext_resource path="res://grenade.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ammo_grenade.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -34,17 +38,13 @@ shape = SubResource( 1 )
 [node name="CSGBox" type="CSGBox" parent="ground/CollisionShape"]
 material = SubResource( 2 )
 
-[node name="ammo" type="StaticBody" parent="." groups=["ammo_gun"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.833, 2, 25.532 )
+[node name="ammo" parent="." instance=ExtResource( 9 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="ammo"]
-shape = SubResource( 1 )
-
-[node name="CSGBox" type="CSGBox" parent="ammo/CollisionShape"]
-material = SubResource( 2 )
+[node name="ammo_gun" parent="." instance=ExtResource( 8 )]
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.994308, -4.35178e-08, -0.106542, -3.81751e-08, 1, -5.21855e-08, 0.106542, -4.78212e-08, -0.994308, -6.02271, 0, 39.8876 )
+grenade = ExtResource( 10 )
 
 [node name="sound_fx" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource( 7 )
@@ -107,5 +107,8 @@ margin_right = 668.0
 margin_bottom = 448.0
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
+
+[node name="ammo_grenade" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.038, 2, 19.808 )
 
 [editable path="player"]
