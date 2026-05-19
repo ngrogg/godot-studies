@@ -21,6 +21,103 @@ Link to GDExtensions documentation [here](https://docs.godotengine.org/en/stable
 Familiarity with Object-Oriented Programming concepts. This includes concepts such as objects and classes.
 
 ## Learn to code with GDScript
+Notes from "Learn GDScript from ZERO".
+
+Link to Docs can be found [here](https://docs.godotengine.org/en/stable/getting_started/introduction/learn_to_code_with_gdscript.html)
+
+Be sure to have graphics acceleration on.
+
+On Linux Brave error will look like " Errors happened while loading: WebGL not available".
+
+Enable under "brave://settings/system" and restart browser.
+
+### Lesson 1: What Code is Like
+Very basics of what will be covered in following lessons.
+
+Includes the obligatory "Hello World" in "Try Your First Code". See "Lesson1_TryYourFirstCode.gd"
+
+### Lesson 2: Your First Error
+What is an error message? A message stating code doesn't work.
+
+Example error: <br>
+`The function "move" already exists in this class (at line 22).`
+
+Are error messages a good or bad thing in code? Good
+
+Includes an example of code that won't run. See "Lesson2_FixYourFirstError.gd".
+
+### Lesson 3: We Stand on the Shoulders of Giants
+High level explanation of libraries, functions and using existing code by other developers.
+
+High level basic syntax to call a function, `function()` i.e `show()`.
+
+High level basic syntax to provide function arguments, `function(argument)` i.e `rotate(0.3)`.
+
+What does the code `show()` do? Call the function "show" to make a sprite visible.
+
+How is a function called? Call it's name with opening and closing parenthesis. i.e `function()`.
+
+Includes code to make an invisible character visible. See "Lesson3_MakeTheCharacterVisible.gd".
+
+Includes code rotate a sprite. See "Lesson3_MakeTheRobotUpright.gd".
+
+### Lesson 4: Drawing a Rectangleo
+Call functions to move a turtle a set amount of space and to rotate a set amount of degrees.
+
+End goal is to draw a rectangle.
+
+In the function call `move_forward(30)` which part is the argument? "30".
+
+Includes code to draw a corner, rectangle and larger rectangle.
+
+For brevity all the code is under one GDScript file "Lesson4_Rectangles.gd"
+
+### Lesson 5: Coding Your First Rectangle
+
+### Lesson 6: Your First Function Parameter
+
+### Lesson 7: Introduction to Member Variables
+
+### Lesson 8: Defining Your Own Variables
+
+### Lesson 9: Adding and Subtracting
+
+### Lesson 10: The Game Loop
+
+### Lesson 11: Time Delta
+
+### Lesson 12: Using Variables to Make Code Easier to Read
+
+### Lesson 13: Conditions
+
+### Lesson 14: Multiplying
+
+### Lesson 15: 2D Vectors
+
+### Lesson 16: Introduction to While Loops
+
+### Lesson 17: Introduction to For Loops
+
+### Lesson 18: Creating Arrays
+
+### Lesson 19: Looping Over Arrays
+
+### Lesson 20: Strings
+
+### Lesson 21: Functions That Return a Value
+
+### Lesson 22: Appending and Popping Values from Arrays
+
+### Lesson 23: Accessing Values in Arrays
+
+### Lesson 24: Creating Dictionaries
+
+### Lesson 25: Looping Over Dictionaries
+
+### Lesson 26: Value Types
+
+### Lesson 27: Specifying Types With Type Hints
+
 
 ## Overview of GoDot's key concepts
 
