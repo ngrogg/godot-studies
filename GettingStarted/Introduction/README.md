@@ -59,9 +59,9 @@ How is a function called? Call it's name with opening and closing parenthesis. i
 
 Includes code to make an invisible character visible. See "Lesson3_MakeTheCharacterVisible.gd".
 
-Includes code rotate a sprite. See "Lesson3_MakeTheRobotUpright.gd".
+Includes code to rotate a sprite. See "Lesson3_MakeTheRobotUpright.gd".
 
-### Lesson 4: Drawing a Rectangleo
+### Lesson 4: Drawing a Rectangle
 Call functions to move a turtle a set amount of space and to rotate a set amount of degrees.
 
 End goal is to draw a rectangle.
@@ -72,11 +72,77 @@ Includes code to draw a corner, rectangle and larger rectangle.
 
 For brevity all the code is under one GDScript file "Lesson4_Rectangles.gd"
 
-### Lesson 5: Coding Your First Rectangle
+### Lesson 5: Coding Your First Function
+Sequence of instructions given a name. Name is an identifier.
+
+Functions can be run repeatedly.
+
+Definition: <br>
+`func NAME():` <br>
+`    code` <br>
+
+Must be indented.
+
+Advantages of functions: reuse code, name multiple lines of code and to run multiple instructions at once.
+
+Functions can't use spaces in names, use underscores instead.
+
+GDScript convention is snake case "function_name" and not camel case "functionName".
+
+Cannot start a function name with numbers.
+
+Includes code to draw squares. See "Lesson5_DrawSquares.gd"
 
 ### Lesson 6: Your First Function Parameter
+Arguments for functions are "parameters".
+
+Act like placeholders in the functions code.
+
+Example parameter definition: <br>
+`func rotate(radians)`<br>
+`    rotation = rotation + radians`<br>
+
+What is a function parameter? A label for the value a function receives.
+
+Like function names, parameters cannot have spaces in name.
+
+Correct syntax for a function definition? `func function_name(parameter_name):`
+
+Functions can have multiple parameters, comma delimited
+
+When defining a function, parameters are optional
+
+What is the syntax for a function with multiple parameters? `func function_name(parameter1, parameter_2, ...):`
+
+Includes code for parameter user. See "Lesson6_MultipleParameters.gd".
 
 ### Lesson 7: Introduction to Member Variables
+Used to trace values that change over time.
+
+Examples are health, checkpoints or score.
+
+Example variable: <br>
+`var health = 100`
+
+Member variables are values attached to a game entity.
+
+Properties like the position, rotation and scale of a character.
+
+What's a variable? A label to keep track of a value that can change.
+
+Many member variables have sub-values.
+
+For example position includes the "x" and "y" sub-variables.
+
+Scale also has it's own "x" and "y" sub-variables.
+
+Accessed with dot operator, i.e. `position.x = 200`
+
+In games the Y-axis is positive going down.
+
+How do you access sub-variables? Write a dot "." between a variable and sub-variable.
+
+Includes code for variable use. See "Lesson7_Variables.gd".
 
 ### Lesson 8: Defining Your Own Variables
 

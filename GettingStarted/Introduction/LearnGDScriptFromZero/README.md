@@ -14,3 +14,6 @@ Code from the "Learn GDScript From Zero" online course.
   Remember, in actual code the function `rotate(argument)` would need to be defined first!
 * **Lesson4_Rectangles.gd**, Call predefined functions to move a turtle to draw shapes.
   A combination of several smaller GDScripts from the lesson for brevity.
+* **Lesson5_DrawSquares.gd**, Functions to draw squares.
+* **Lesson6_MultipleParameters.gd**, Functions with multiple parameters.
+* **Lesson7_Variables.gd**, Usage of variables.
