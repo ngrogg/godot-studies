@@ -17,3 +17,8 @@ Code from the "Learn GDScript From Zero" online course.
 * **Lesson5_DrawSquares.gd**, Functions to draw squares.
 * **Lesson6_MultipleParameters.gd**, Functions with multiple parameters.
 * **Lesson7_Variables.gd**, Usage of variables.
+* **Lesson8_DefiningVariables.gd**, Defining variables.
+* **Lesson9_AddingSubtracting.gd**, Adding and subtracting from a variable.
+* **Lesson10_Process.gd**, Utilizing the process function.
+* **Lesson11_Delta.gd**, Utilizing Delta for frame timing.
+* **Lesson12_ClarifyingVariables.gd**, Using variables to make code easier to read.

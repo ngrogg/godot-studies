@@ -145,14 +145,93 @@ How do you access sub-variables? Write a dot "." between a variable and sub-vari
 Includes code for variable use. See "Lesson7_Variables.gd".
 
 ### Lesson 8: Defining Your Own Variables
+Define variables with "var" keyword, i.e. `var health`.
+
+Set/output values with Python syntax: <br>
+`var health = 100`<br>
+`health = 50`<br>
+`print(health)`<br>
+
+Includes code for defining variables. See "Lesson8_DefiningVariables.gd".
 
 ### Lesson 9: Adding and Subtracting
+`-=` and `+=` syntax
+
+`func heal(amount):` <br>
+`    health += amount`<br>
+
+What are ways to increase the health variables? `health = health + amount` and `health += amount`.
+
+Includes code for adding and subtracting from variable. See "Lesson9_AddingSubtracting.gd".
 
 ### Lesson 10: The Game Loop
+`_process` function performs continuous actions
+
+`func _process(delta):`<br>
+`    rotate(0.05)`<br>
+
+How many parameters does this function take? `func _process(delta):`, 1
+
+Godot will run code every frame
+
+How often does the `_process()` function run? Multiple times a second
+
+Includes code for process function. See "Lesson10_Process.gd"
 
 ### Lesson 11: Time Delta
+Almost everything in the game will have a process function.
+
+What parameter does the `_process()` function take? delta
+
+Delta represents a time difference.
+
+Used to make sure game runs at the same speed on all computers
+
+Ignoring delta will make movement speed vary depending on the computer.
+
+Delta is typically a small decimal number.
+
+To apply delta multiple speed values by delta. Such as `rotate(3.0 * delta)`.
+
+Delta matters to ensure code runs uniform between computers.
+
+Otherwise games will run at different speeds on different hardware.
+
+Multiplying time-sensitive values by delta makes them time-dependent rather than frame-dependent.
+
+What does `rotation_speed * delta` mean? Multiplying rotation_speed by delta.
+
+Includes code for using delta in a function. See "Lesson11_Delta.gd"
 
 ### Lesson 12: Using Variables to Make Code Easier to Read
+Example code: <br>
+`func _process(delta):`
+`    rotate(4 * delta)`<br>
+
+What does "4" mean? It's how fast the character rotates. 4 Radians per second.
+
+Replace with a variable:
+`var angular_speed = 4`<br>
+`func _process(delta):`
+`    rotate(angular_speed * delta)`<br>
+
+Easier to read, easier to reuse
+
+What line defines the angular speed variable? `var angular_speed = 4`
+
+Variables outside functions are script wide.
+
+Variables in functions are limited to script.
+
+Trying to directly access by name will result in scope errors.
+
+Variables can be defined inside and outside of functions.
+
+Grouping variables by their use also makes code easier to read.
+
+Putting all movement variables together, putting all combat variables together.
+
+Includes code making heavier use of variables. See "Lesson12_ClarifyingVariables.gd".
 
 ### Lesson 13: Conditions
 
