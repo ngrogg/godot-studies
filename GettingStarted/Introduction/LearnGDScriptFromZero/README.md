@@ -22,3 +22,18 @@ Code from the "Learn GDScript From Zero" online course.
 * **Lesson10_Process.gd**, Utilizing the process function.
 * **Lesson11_Delta.gd**, Utilizing Delta for frame timing.
 * **Lesson12_ClarifyingVariables.gd**, Using variables to make code easier to read.
+* **Lesson13_IfStatements.gd**, Using if statements.
+* **Lesson14_Multiplication.gd**, Multiplication.
+* **Lesson15_2dVectors.gd**, 2d Vectors.
+* **Lesson16_WhileLoops.gd**, While loops.
+* **Lesson17_ForLoops.gd**, For loops.
+* **Lesson18_Arrays.gd**, Arrays.
+* **Lesson19_ArrayLoops.gd**, Looping over arrays.
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
+* **Lesson_**,
