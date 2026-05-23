@@ -444,9 +444,36 @@ Can also map vectors to dictionaries.
 See code for dictionary loops, "Lesson24_DictionaryLoops.gd".
 
 ### Lesson 26: Value Types
+Types of variables, int, strings, etc.
+
+Cast to string with `str(variable)`.
+
+Cast to int with `int(variable)`.
+
+Some variable types are at least partly compatible like Vectors and numbers: <br>
+`print(Vector2(1,1) * 10)`
+
+Cannot directly add or subtract from a vector, use sub-variables.
+
+See code for variable types, "Lesson26_VariableTypes.gd"
 
 ### Lesson 27: Specifying Types With Type Hints
+By default GDScript is dynamically-typed.
 
+Can define variables without a type, i.e. `var health = 100`
+
+Type hints specify the desired input: <br>
+`var variable_name : type = value` <br>
+
+For example, <br>
+`var cell_size: Vector2 = Vector2(50.0,50.0)`
+
+Computer will not allow use of incompatible type such as `cell_size = 50.0`.
+
+GDScript can use type inference to figure out a variable type:<br>
+`var cell_size := Vector2(50.0,50.0)`
+
+See code for type hints, "Lesson27_TypeHints.gd".
 
 ## Overview of GoDot's key concepts
 

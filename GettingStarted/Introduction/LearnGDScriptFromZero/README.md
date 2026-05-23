@@ -35,5 +35,5 @@ Code from the "Learn GDScript From Zero" online course.
 * **Lesson23_ArrayIndexes.gd**, Working with array indexes.
 * **Lesson24_Dictionaries.gd**, Working with dictionaries.
 * **Lesson25_DictionaryLoops.gd**, Using loops with Dictionaries.
-* **Lesson26_**,
-* **Lesson27_**,
+* **Lesson26_VariableTypes.gd**, Defining Variable types with GDScript.
+* **Lesson27_TypeHints.gd**, Variable Type Hints with GDScript.
