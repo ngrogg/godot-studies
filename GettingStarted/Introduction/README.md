@@ -477,6 +477,67 @@ See code for type hints, "Lesson27_TypeHints.gd".
 
 ## Overview of GoDot's key concepts
 
+### Scenes
+Reusable chunks.
+
+A scene can be a character, a weapon, a menu in the UI, a house, a level or more.
+
+Scenes can also be nested.
+
+### Nodes
+Scenes are composed of nodes.
+
+Nodes are the smallest building blocks and can be arranged into trees.
+
+There are "2D" and "3D" nodes.
+
+### The scene tree
+A tree of scenes.
+
+### Signals
+Nodes emilt signs when evens occur.
+
+Allows nodes to communicate. Makes them flexible.
+
+### Summary
+Nodes, scenes, the scene tree and signals are the four core concepts of GoDot.
+
+Nodes are the game's smallest building blocks.
+
+These are combined to create scenes that can be used to build a scene tree.
+
+Signals can then be used to make nodes react to other nodes or scenes.
+
 ## First look at GoDot's Interfact
 
+### The Project Manager
+
+### First look at Godot's Editor
+
+### The five main screens
+
+### Integrated class reference
+
 ## Learning new features
+
+### Making the most of this manual
+
+### Learning to think like a programmer
+
+### Learning with the community
+
+### Community Tutorials
+
+## GoDot's Design Philosophy
+
+### Object-oriented design and composition
+
+### All-inclusive package
+
+### Open source
+
+### Community-Driven
+
+### The Godot editor is a Godot game
+
+### Separate 2D and 3D engines
