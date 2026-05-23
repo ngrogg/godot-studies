@@ -341,16 +341,107 @@ Ex. <br>
 Includes code for looping over arrays, see "Lesson19_ArrayLoops.gd".
 
 ### Lesson 20: Strings
+Strings are used for storing information.
+
+Strings are typically wrapped in double quotations: <br>
+`var my_name = "My Name"`<br>
+`print(my_name)`<br>
+
+Strings are an array of characters, a for lop can be used to iterate through string.
+
+Is "1" or "name" a string? Yes
+
+An array of strings can be called with a for loop.
+
+See code for Strings, "Lesson20_Strings.gd"
 
 ### Lesson 21: Functions That Return a Value
+Functions can also calculate and return values.
+
+One predefined function `round()` returns a decimal rounded.
+
+`lerp()` function short of "linear interpolate" blends between two values.
+
+Useful for smoothing movement.
+
+Use the `return()` keyword to return values from a function.
+
+See code for using return, "Lesson21_Return.gd"
 
 ### Lesson 22: Appending and Popping Values from Arrays
+GDScript can append and remove values from arrays.
+
+"Queues" and "Stacks".
+
+Add with `append()` function to add to end of an array.
+
+`array.append(variable)`
+
+To remove from the start of an array use the `pop_front()` function.
+
+`array.pop_front()`
+
+To remove from the end of an array use the `pop_back()` function.
+
+`array.pop_back()`
+
+See code for using queues and stacks, "Lesson22_StackQueue.gd".
 
 ### Lesson 23: Accessing Values in Arrays
+Use for or while loops to iterate over entire arrays
+
+Access specific array items by index: `array[index]`.
+
+GDScript counts from 0.
+
+
+Access third item in array like `array[2]`
+
+Access from back with negative values, -1 for last item in array.
+
+GDScript arrays come with member function `size()`.
+
+Call on array to confirm size of array: `print(array.size())`
+
+Final item is always `array.size() - 1`
+
+See code for array indexes, "Lesson23_ArrayIndexes.gd"
 
 ### Lesson 24: Creating Dictionaries
+Dictionaries are data structures for mapping pairs of values.
+
+First value: Key
+
+Second value: Value
+
+Define a dictionary with curly brackets.
+
+`Keys: Values`
+
+Dictionaries can hold any values.
+
+Every key needs to be unique.
+
+Access values by key, `dictionary[key]`
+
+Assigned to variables that way too: `var item = dictionary["key"]`
+
+Values are changed that way as well.
+
+`dictionary["key"] += 1`
+
+See code for Dictionaries, "Lesson24_Dictionaries.gd"
 
 ### Lesson 25: Looping Over Dictionaries
+Use for loops to iterate over a dictionary.
+
+Use `keys()` keyword, `for item in dictionary.keys():`
+
+Optional, can just `for item in dictionary:`
+
+Can also map vectors to dictionaries.
+
+See code for dictionary loops, "Lesson24_DictionaryLoops.gd".
 
 ### Lesson 26: Value Types
 

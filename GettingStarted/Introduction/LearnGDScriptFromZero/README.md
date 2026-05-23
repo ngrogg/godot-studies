@@ -29,11 +29,11 @@ Code from the "Learn GDScript From Zero" online course.
 * **Lesson17_ForLoops.gd**, For loops.
 * **Lesson18_Arrays.gd**, Arrays.
 * **Lesson19_ArrayLoops.gd**, Looping over arrays.
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
-* **Lesson_**,
+* **Lesson20_Strings.gd**, strings in GDScript.
+* **Lesson21_Return.gd**, using returns in functions in GDScript.
+* **Lesson22_StackQueue.gd**, Working with stacks and queues in GDScript.
+* **Lesson23_ArrayIndexes.gd**, Working with array indexes.
+* **Lesson24_Dictionaries.gd**, Working with dictionaries.
+* **Lesson25_DictionaryLoops.gd**, Using loops with Dictionaries.
+* **Lesson26_**,
+* **Lesson27_**,
