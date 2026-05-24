@@ -508,36 +508,98 @@ These are combined to create scenes that can be used to build a scene tree.
 
 Signals can then be used to make nodes react to other nodes or scenes.
 
-## First look at GoDot's Interfact
+## First look at GoDot's Interface
+Overview of the elements of Godot's interface
 
 ### The Project Manager
+View projects and assets.
 
 ### First look at Godot's Editor
+Interface is made up of scenes, filesystem, the inspector and the viewport for the scene.
 
 ### The five main screens
+The viewport includes five main views: 2d, 3d, script, game and asset library.
+
+2d/3d are fairly self-explanatory. View your 2d/3d scenes.
+
+Script is to view/edit GDScript files, similar to a traditional IDE
+
+Game screen is where projects show up when running
+
+Asset library is where to view community add-ons, scripts, and assets.
 
 ### Integrated class reference
+View info about a class, method, property, constant or signal
 
 ## Learning new features
 
 ### Making the most of this manual
+Use the search feature of the docs
+
+Info on classes etc. can be viewed from inside the GoDot IDE as well.
+
+View "Class Reference" for additional info on a class.
 
 ### Learning to think like a programmer
+Two free resources to get started: <br>
+* **GDQuest's Learn GDScript From Zero**, this is covered earlier in these notes.
+* **Automate the boring stuff with Python**, by Al Sweigart. GDScript is based on Python.
 
 ### Learning with the community
+GoDot forums
+
+When asking questions answer the following as part of initial post: <br>
+1. Describe your goal
+2. If there is an error, share the exact error message.
+3. If there is code involved, share a code example.
+4. Share a screenshot of the scene doc with written code.
 
 ### Community Tutorials
+Community tutorials, linked [here](https://docs.godotengine.org/en/stable/community/tutorials.html#doc-community-tutorials)
 
 ## GoDot's Design Philosophy
+Every engine is different and fits different needs.
 
 ### Object-oriented design and composition
+Godot uses OOP designs with it's scenes and nodes.
+
+Scenes can be composed or aggregated.
+
+Scenes can also inherit from other scenes.
+
+A "Character" scene can be created and then more specific scenes can inherit from it.
+
+Has things like health or basic movement options.
+
+For example a "Warrior" or "Wizard" with class specific moves like cast or defend.
+
+Nodes behave in a similar manner
 
 ### All-inclusive package
+Godot tries to include all the tools required in it's own package.
+
+Scripting, animation, tile editing, shading, debugging etc.
+
+Can still be extended to other languages or programs.
+
+For example, GDExtension allows use of other languages like C, C++ or Rust.
 
 ### Open source
+GoDot is open source and can be easily modified or extended.
 
 ### Community-Driven
+Touchy feely blurb about community :)
 
 ### The Godot editor is a Godot game
+Editor runs on game engine. Can use the same code and scenes or extend the editor.
+
+With the `@tool` command game code can be run in the editor.
+
+Editor is written in C++, can't be imported like a typical project.
 
 ### Separate 2D and 3D engines
+Two separate engines for 2d/3d.
+
+Base unit for 2d scenes is pixels.
+
+Can render 2d in 3d, 3d in 2d and overlay 2d sprites and interfaces in 3d world.
