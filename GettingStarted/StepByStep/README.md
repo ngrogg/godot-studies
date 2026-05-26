@@ -1,7 +1,7 @@
 # Step By Step
 
 ## Nodes and Scenes
-Code for this is in the "step-by-step" folder.
+Code for this is in the `"step_by_step"` folder.
 
 ### Nodes
 Building blocks of a game.
@@ -80,10 +80,66 @@ Use "Select" and choose created label scene.
 This can also be set from the menu under "Project" > "Project Settings" along with other project settings.
 
 ## Creating Instances
+No limit to number of scenes, can be saved with ".tscn" extension.
+
+Stands for Text SCeNe.
+
 ### In practice
+Download the ball sample project.
+
+Both the original zip and modified code are in the folder.
+
+Import the project, find the "project.godot" file.
+
+Verison warning can be disregarded.
+
+Add "Ball.tscn" as a child node to the root "Main" node.
+
+"Instantiate Child Scene"
+
+Click and drag towards center of the scene.
+
+Run the scene, should be able to watch the ball fall.
+
+Duplicate the ball (control + d) and position around the scene.
+
+Run scene again, balls should fall and interact with each other.
+
 ### Editing scenes and instances
+Instances can change the properties of one ball without affecting the others using the "Inspector".
+
+Change the default properties of every ball by opent the "ball.tscn" scene and adjusting the ball node there.
+
+Open the "ball.tscn" scene.
+
+Navigate to "Inspector" > "RigidBody2D" > "Physics Material"
+
+Increase the bounce
+
+Balls should bounce a lot more.
+
+Now select one of the instanced balls in the "Main" scene.
+
+Under "Inspector" set it's Gravity Scale to 10.
+
+Re-run the scene, the ball should fall faster.
+
+Note that the "PhysicsMaterial" on the ball cannot be changed.
+
+To change that right click on the material, select properties and click "Make Unique".
+
 ### Scene instances as a design language
+GoDot is designed to eschew code patterns like Entity-Relationshop and Model-View-Controller.
+
+Idea is to imagine the elements players will see and structure code around them.
+
+Recommend creating a diagram of what items will be in each scene.
+
 ### Summary
+Instances with scenes allows developers: <br>
+* The ability to divide game into reusable components.
+* A tool to structure and encapsulate complex systems.
+* A language to think about games' structure in a natural way.
 
 ## Scripting Languages
 ### Available Scripting Languages
