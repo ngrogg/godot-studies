@@ -267,9 +267,71 @@ Complete `sprite_2d.gd` script sans comments: <br>
 `	position    += velocity * delta` <br>
 
 ## Listening to Player Input
+Builds on the previous project.
+
+Two main input tools
+
+First, built in input callbacks, `_unhandled_input`.
+
+Godot calls every time the player presses a key.
+
+Second, the `Input` singleton. Singletons are globally accessible objects. Correct tool for checking input on every frame.
+
+This review uses the "Input" singleton.
+
+Turning requires a new variable `direction`.
+
+Replace the rotation variable with code from the documenation.
+
+Note that `ui_left` and `ui_right` are predefined in every GoDot project.
+
+Comment out the `velocity` and `position` lines in the script.
+
+Save and test scene. Should be able to rotate icon with left and right.
+
 ### Moving when pressing "up"
+Replace `velocity` variable with code from documentation.
+
+`Vector2.ZERO` is another constant for a 2d Vector of length 0.
+
+Use pre-defined `ui_up` to set velocity when player presses up.
+
 ### Complete script
+`extends Sprite2D` <br>
+` ` <br>
+`var speed = 400` <br>
+`var angular_speed = PI` <br>
+` ` <br>
+` ` <br>
+`func _process(delta):` <br>
+`	var direction = 0` <br>
+`	if Input.is_action_pressed("ui_left"):` <br>
+`		direction = -1` <br>
+`	if Input.is_action_pressed("ui_right"):` <br>
+`		direction = 1` <br>
+` ` <br>
+`	rotation += angular_speed * direction * delta` <br>
+` ` <br>
+`	var velocity = Vector2.ZERO` <br>
+`	if Input.is_action_pressed("ui_up"):` <br>
+`		velocity = Vector2.UP.rotated(rotation) * speed` <br>
+` ` <br>
+`	position += velocity * delta` <br>
+
 ### Summary
+Every script in GoDot represents a class and extends one of the engine's built in classes
+Node types classes inherit give access to properties such as rotation and position.
+
+Varibles at the top of the script are class properties or member variables.
+
+GoDot provides several virtual functions.
+
+Functions include `_process()` to apply changes to the node every frame,
+and `_unhandled_input()` to handle key and button presses from the users
+
+The `Input` singleton allows script to react to the player's input anywhere in the code.
+
+Typically used in the `_process()` loop.
 
 ## Using Signals
 ### Scene setup
