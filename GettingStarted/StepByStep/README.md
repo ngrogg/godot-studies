@@ -142,12 +142,70 @@ Instances with scenes allows developers: <br>
 * A language to think about games' structure in a natural way.
 
 ## Scripting Languages
+Scripts attach to a node and extend it's behavior.
+
+Inherit all functions and properties of the node they attach to.
+
 ### Available Scripting Languages
+Godot offers four gameplay programming lanaguages: <br>
+* GDScript
+* C#
+* C
+* C++
+
+C and C++ require the use of GDExtension
+
+There is community support for other languages but those four are the official/native options
+
 ### Which language should I use?
+GDScript is recommended for beginners.
+
+C# requires an external code editor like VSCode or Visual Studio
+
+Fewer resources to learn from.
+
 #### GDScript
+Object-oriented and imperative
+
+Features: <br>
+* Simple syntax
+* Fast compilation and loading times
+* Well integrated with GoDot with code completion and info from scene
+* Built-in vector and transform types, efficient for use of linear algebra
+* Support for multiple threads
+* No garbage collection, handled by engine. Still offers support if required.
+* Gradual type, variables have dynamic types but hints can be used for strong type checks.
+
+Similar to Python syntax
+
 #### .NET/C#
+C# offers a tradeoff between performance and ease of use. Be aware of garbage collector.
+
+Must use .Net edition of the Godot editor to script in C#.
+
+GoDot technically can use other .Net library or framework including other Common Language Infrastructure compliant languages.
+
+However only C# is officially supported.
+
+C# is faster than GDScript.
+
+C# GoDot projects cannot be exported to the web platform
+
 #### C++ via GDExtension
+GDExtension allows C++ without recompiling GoDot.
+
+Use any version of the language and mix compiler brands/versions due to internal C API Bridge.
+
+GDExtension is the most performant option.
+
+Availble types, functions, and properties closely resemble GoDot's actual C++ API.
+
 ### Summary
+Scripts are attached to a node to extend it's functionality.
+
+Godot supports four official scripting languages.
+
+Can mix languages.
 
 ## Creating Your First Script
 ### Project Setup
