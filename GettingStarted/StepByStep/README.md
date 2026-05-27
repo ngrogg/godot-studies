@@ -209,11 +209,62 @@ Can mix languages.
 
 ## Creating Your First Script
 ### Project Setup
+Create a new project.
+
+For this review it's "your_first_script" project.
+
+Use the "Other Node" button and select "Sprint2D".
+
+Drag the "icon.svg" from "FileSystem" to "Texture" under "Sprite2D" in the "Inspector" tab.
+
 ### Creating a New Script
+Right click the node and attach a script.
+
+Use GDScript if not already select.
+
+Change the Template to "Object: Empty" to start with an empty file.
+
+Review includes C# however this review will use GDScript as this review is done on a Linux machine.
+
 ### Hello, World!
+As a test print hello world.
+
+`func _init():` <br>
+`    print("Hello, world!")`
+
+Save scene if not done already.
+
+Test the scene, should see output in console.
+
 ### Turning Around
+Member Variables sit near the top of the script, after any "extends" lines but before any functions.
+
+Add the code from the documentation.
+
+Note that GoDot works in Radians by default. Has functions to use Degrees instead if preferred.
+
+Functions in documentation start with a leading underscore.
+
+Built in functions that can be overridden start with an underscore.
+
+Run the scene, should see icon spinning around.
+
 #### Moving Forward
+Add code for velocity and position from documentation.
+
+Should make icon move in a circle
+
 ### Complete script
+Complete `sprite_2d.gd` script sans comments: <br>
+`extends Sprite2D` <br>
+` ` <br>
+`var speed         = 400` <br>
+`var angular_speed = PI` <br>
+` ` <br>
+`func _process(delta):` <br>
+`	rotation    += angular_speed * delta` <br>
+`	var velocity = Vector2.UP.rotated(rotation) * speed` <br>
+`	position    += velocity * delta` <br>
 
 ## Listening to Player Input
 ### Moving when pressing "up"
