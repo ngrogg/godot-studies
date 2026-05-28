@@ -334,9 +334,149 @@ The `Input` singleton allows script to react to the player's input anywhere in t
 Typically used in the `_process()` loop.
 
 ## Using Signals
+Messages nodes emit when something specific happens to them like a button being pressed.
+
+Delegation mechanism built into GoDot.
+
+Allows one game object to react toa a change in another without referencing one another.
+
+Examples, a player taking damage or healing. Would want health bar to reflect change.
+
+Signals can do that.
+
+Like methods, signals are a "first-class type".
+
+They can be passe as method arguments without having to pass them as strings.
+
+Better autocomplete and less prone to errors.
+
+Notes build on the input review from previously.
+
+Remember to use the correct naming conventions.
+
+GDSCript classes use PascalCase, variables and functions use snake-case and constants use ALL_CAPS.
+
+Review is in GDScript so other naming conventions are not including in these notes.
+
 ### Scene setup
+Open "Your First Script" project
+
+Create a new scene, choose 2D Scene.
+
+Drag previously created "sprite_2d.tscn" scene onto the root "Node2D" node.
+
+Add child node of type "Button" to root "Node2D" node
+
+Move and resize to be closer to sprite.
+
+Add text to button under "Inspector".
+
+Save scene as "node_2d.tscn" if not already done.
+
+Test scene, should be able to click button although nothing will happen.
+
 ### Connecting a signal in the editor
+Select the "Button" node.
+
+Next to "Inspector" is the "Signals" tab.
+
+Choose the "pressed()" signal and connect to the "Sprite2D" node.
+
+When connecting signals there's two modes.
+
+The simple mode connects to nodes that have a script attached and creates a callback function on the script.
+
+The advanced mode connects to any node or built in function, adds arguments to the callback and sets options.
+
+May not work in external editors.
+
+Double check script that new code is added.
+
+Should be a little green helper symbol to indicate a connection.
+
+Add code from documentation.
+
 ### Connecting a signal via code
+Signals can be connected via code instead of using the editor.
+
+Required when nodes or scenes are instantiated inside of a script.
+
+Godot has a "Timer" node that's useful for cooldowns, reloading etc.
+
+Add a "Timer" child node to the "Sprite2D" node.
+
+Enable "AutoStart" on "Timer" under "Inspector"
+
+Go back to "Sprite2D" node's script.
+
+Add code from documentation.
+
+Be convention, callback methods are named as `_on_node_name_signal_name`.
+
+Visible propter is a boolean that controls visibility of node.
+
+Test scene, should see sprite blink on and off.
+
 ### Complete script
+`extends Sprite2D` <br>
+` ` <br>
+`var speed = 400` <br>
+`var angular_speed = PI` <br>
+` ` <br>
+`func _ready():` <br>
+`	var timer = get_node("Timer")` <br>
+`	timer.timeout.connect(_on_timer_timeout)` <br>
+` ` <br>
+`func _process(delta):` <br>
+`	rotation += angular_speed * delta` <br>
+`	var velocity = Vector2.UP.rotated(rotation) * speed` <br>
+`	position += velocity * delta` <br>
+` ` <br>
+`func _on_button_pressed():` <br>
+`	set_process(not is_processing())` <br>
+` ` <br>
+`func _on_timer_timeout():` <br>
+`	visible = not visible` <br>
+
 ### Custom Signals
+Custom signals can be defined in a script.
+
+For example to show a game over scren when the player's health reaches zero.
+
+Define a signal "died" or "health_depleted" when their health reaches 0.
+
+`extends Node2D`<br>
+`signal health_depleted`<br>
+`var health = 10`<br>
+
+Custom signals work the same way as built-in ones.
+
+They'll be in the "Signals" tab and are connected the same way.
+
+To emit a signal call `emit()` on the signal: <br>
+`func take_damage(amount):`<br>
+`    health -= amount`<br>
+`    if health <= 0:`<br>
+`    health_depleted.emit()`<br>
+
+A signal can declare arguments, specify the arguments in parentheses: <br>
+`signal health_changed(old_value, new_value)`
+
+To emit values along with the signal add them as extra arguments to the `emit()` function: <br>
+`func take_damage(amount):` <br>
+`    var old_health = health` <br>
+`    health -= amount` <br>
+`    health_changed.emit(old_health, health)` <br>
+
 ### Summary
+Any node in Godot emits signals when something specific happens to them, like a button being pressed.
+
+Other nodes can connect to signals and react to selected events.
+
+Signals have many uses.
+
+React to a node entering or exiting the game world, to a collision or a character entering or leaving an area.
+
+Example, an "Area2D" representing a coin emits a `body_entered` scene whenever the player's body enters it's collision shape.
+
+Letting the player know it's collected.
