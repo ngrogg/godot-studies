@@ -91,8 +91,77 @@ Player node now has a shape and can collide with other objects.
 Save scene.
 
 ## Coding the Player
+Attach a script to the "Player" node, default settings are fine.
+
+Documentation includes several C# Warnings/Notices.
+
+As this review is "GDScript" only those will not be included in this review.
+
+Add the code from the documentation to the script.
+
+Using the "`@export`" keyword on variable allows it to be set in "Inspector".
+
+A default value is set in the script and can be overridden in the Inspector.
+
+Use `_ready():` to set screen size and adjust the game when loading the scene.
+
+Use `_process():` to define what the player does.
+
+Check for input, move, play the appropriate animation.
+
+Under "Project" -> "Project Settings" select the "Input Map" tab.
+
+Add "move_right" as an action and set the movement to the right arrow.
+
+Repeat the process to set "move_left", "move_up", and "move_down" to arrow keys.
+
+Note additional keys can be mapped.
+
+Set velocity to (0,0) by default
+
+Add code to change velocity from documentation. Remember that Y is inverted!
+
+`$` is shorthand for `get_node()`.
+
+Code `$AnimatedSprite2D.play()` is the same as `get_node("AnimatedSprite2D").play()`.
+
+Returns the node at the relative path from the current node or returns `null` if node is not found.
+
+Use `clamp()` to prevent sprite from leaving the screen.
+
+Add additional code at end of process function.
+
+Save and test scene. Should be able to move character with arrow keys.
+
 ### Choosing animations
+Choose animation based on direction and movement using `flip_h` and `flip_v`.
+
+Add code from documentation at end of process function.
+
+Be sure the animation names match
+
 ### Preparing for collisions
+Want the player to detect when hit by enemies.
+
+No enemies yet but groundwork will be laid.
+
+Add signal to player script.
+
+Connect signal "body_entered(body: Node2D)".
+
+Adds function.
+
+Add code from documentation.
+
+Each time an enemy hits the lay signal is emitted.
+
+Disable player collision so signal isn't triggered more than once.
+
+Disabling a collision shap can cause an error if the engine is processing the collision.
+
+Using `set_deferred()` tells GoDot to wait until it's safe to do so.
+
+Lastly add a function to start the player in a position.
 
 ## Creating the Enemy
 ### Node setup
