@@ -164,8 +164,45 @@ Using `set_deferred()` tells GoDot to wait until it's safe to do so.
 Lastly add a function to start the player in a position.
 
 ## Creating the Enemy
+Simple behavior, spawn randomly at edge of screen, choose a direction and move in a straight line.
+
+Create a "Mob" scene, so it can be instanced to create multiples of the mob.
+
 ### Node setup
+Create a new scene.
+
+Add the following nodes: <br>
+* **RigidBody2D**, named "Mob"
+* **AnimatedSprite2D**, child of "Mob"
+* **CollisionShape2D**, child of "Mob"
+* **VisibleOnScreenNotifier2D**, child of "Mob"
+
+Remember to select the parent node and "group" so children can't be selected. Just like the player scene.
+
+Select the "Mob" node, under inspector set the "Gravity Scale" to 0. Prevents the mob from falling downwards.
+
+Under "CollisionObject2D", under "Inspector" expand the "Collision" group and uncheck "Layer 1" inside the "Mask" property.
+
+Ensures mobs don't collide with each other.
+
+Set up "AnimatedSprite2D" like the Player animations. Three scenes "fly", "swim", "walk", two images for each in the art folder.
+
+Set "Animation Speed" property to "3" for all three animations.
+
+It's not explicitly labeled but is the "#.# FPS" field under "Animations:". During this review the default was "5.0 FPS".
+
+Set the "Scale" to (0.75, 0.75) for the "AnimatedSprite2D" node.
+
+Add a "CapsuleShape2D" shape for the collision. Will need rotated by 90 in "Transform" under "Inspector". Will need resized to fit.
+
 ### Enemy script
+Attach a script to the "Mob" node.
+
+Add code from Documentation to randomly pick animations and directions
+
+Also add function to remove sprite once it leaves the screen with `queue_free()`.
+
+Connect the `screen_exited()` signal of the "VisibleOnScreenNotifier2D" node to the "Mob" node and add code from documentation.
 
 ## The Main Game Scene
 ### Spawning mobs
