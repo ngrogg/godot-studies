@@ -205,9 +205,84 @@ Also add function to remove sprite once it leaves the screen with `queue_free()`
 Connect the `screen_exited()` signal of the "VisibleOnScreenNotifier2D" node to the "Mob" node and add code from documentation.
 
 ## The Main Game Scene
+Create a new scene and add a Node named "Main".
+
+Use Node and not Node2D as it will be handling game logic.
+
+Click "Instance" and select player scene.
+
+Add child nodes to main: <br>
+* **Timer**, named "MobTimer" to control how often mobs spawn.
+* **Timer**, named "ScoreTimer" to increment score every second.
+* **Timer**, named "StartTimer" to give a delay before starting.
+* **Marker2D**, named "StartPosition" to indicate the player's start position.
+
+Set the "Wait Time" property of each timer in seconds as follows: <br>
+1. MobTimer: 0.5
+2. ScoreTimer: 1
+3. StartTimer: 2
+
+Set the "One Shot" property of "StartTimer" to "On".
+
+Set the "Position" of the node to `(240, 450)`
+
 ### Spawning mobs
+Main node will be spawning mobs.
+
+Add a child node of type "Path2D" named "MobPath" to the root Main node.
+
+Select "Add Point" and create a *CLOCKWISE* pattern in the corners for the mobs to spawn in.
+
+Make sure "Use Grid Snap" and "Use Smart Snap" are enabled.
+
+Do not use a counter-clockwise patter or the mobs will spawn facing outwards.
+
+Once four points are added click "Close Curve".
+
+Add a child node of type "PathFollow2D" node to child node "MobPath" and name it "MobSpawnLocation".
+
 ### Main script
+Add a script to Main.
+
+Export the mob scene to choose mob.
+
+Under "Inspector" and "Main.gd" there should be a "Mob Scene" property.
+
+Drag "mob.tscn" from the FileSystem or select the scene under the dropdown.
+
+Select the Player scene under the main node and go to "Signals".
+
+Connect the "hit" signal to a new function "game_over".
+
+Enter "game_over" in the "Receiver Method" box.
+
+Add code from Documentation.
+
+Next connect "timeout()" signal from each Timer node to the main script.
+
+Create new signals for "StartTimer", "ScoreTimer", and "MobTimer".
+
+Name them as such "on_type_timer_timeout()" if not already named.
+
+MobTimer should be "on_mob_timer_timeout()" etc.
+
+Should create three new functions.
+
+Add code from Documentation. Two are simple.
+
+Mob Timer will create a mob instance, pick a starting location and set the mob in motion.
+
+Pick a reandom value between 150 and 250 for movement.
+
+Uses "PI" as GoDot uses radians.
+
 ### Testing the scene
+
+Add code from Documentation.
+
+Set "Main" as main scene.
+
+Test scene, replace with "pass" once testing complete.
 
 ## Heads Up Display
 ### ScoreLabel
