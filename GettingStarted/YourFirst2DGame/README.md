@@ -285,11 +285,90 @@ Set "Main" as main scene.
 Test scene, replace with "pass" once testing complete.
 
 ## Heads Up Display
+Create a new scene of type "Other Node" and add a "CanvasLayer" node.
+
+Name it "HUD"
+
+Create the following child nodes with the following names: <br>
+* **Label**, named "ScoreLabel".
+* **Label**, named "Message".
+* **Button**, named "StartButton".
+* **Timer**, named "MessageTimer".
+
+Type a number into the "Text" fied for "ScoreLabel" under "Inspector"
+
+Change the font under "Theme Overrides" > "Fonts" > "Load".
+
+Use provided font.
+
+Increase the font size. Repeat the process on the "Message" and "StartButton" nodes.
+
+Control nodes have a position and size but they also have anchors. Anchors define the origin.
+
 ### ScoreLabel
+Add the text "0".
+
+Set Horizontal and Vertical alignment to "Center" under "Inspector".
+
+Use the Anchor Preset "Center Top".
+
+Logo is the Green circle under "2D" view.
+
 ### Message
+Add the text "Dodge the Creeps!"
+
+Set Horizontal and Vertical alignment to "Center" under "Inspector".
+
+Set the "Autowrap Mode" to "Word"
+
+Under "Control" > "Layout" > "Transform" set "Size.X" to 400.
+
+Choose the Anchor Preset "Center".
+
 ### StartButton
+Add the text "Start".
+
+Under "Control" > "Layout" > "Transform" set "Size.X" to 200 and "Size.Y" to 100.
+
+Choose the Anchor Preset "Center Bottom".
+
+Under "Control" > "Layout" > "Transform" set "Position.Y" to 580.
+
+Set the "Message Timer" wait time to 2 and the "One Shot" Property to "On".
+
+Add script to HUD and code from documentation.
+
+An alternatively to using a timer node is to use the SceneTree's create_timer() function.
+
+Useful for adding delays such as a wait before showing a button.
+
+Connect the "pressed()" signal of "StartButton" and the "timeout()" signal of "MessageTimer to the HUD node.
+
+Add code from documentation.
+
 ### Connecting HUD to Main
+Go back to main scene.
+
+Instance the "HUD" scene as a child node of Main
+
+Choose the HUD child node, go to signals.
+
+Connect the HUD's "start_game" signal to the "new_game()" function of the main node.
+
+This is under "pick", verify that green signal is by the new_game() function.
+
+Add code from documentation
+
+Remove `new_game()` from `_ready()` if not already done. For this review it's simply commented out.
+
 ### Removing old creeps
+In the "Mob" scene.
+
+Select the root node, click "Groups" and the plus to create new group dialog.
+
+Name group "mobs".
+
+Add line from documentation to code in Main.
 
 ## Finishing Up
 ### Background
