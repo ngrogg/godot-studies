@@ -412,3 +412,11 @@ Select "InputEventAction" and select the "start_game" shortcut.
 
 ### Sharing the finished game with others
 To share with others export the project and zip the executable and PCK file together for uploading.
+
+Be sure to download templates first.
+
+Add Presets, this review uses Linux and Windows. Then download.
+
+Will need to go online.
+
+From there export. For this review a Linux and Windows version were exported.
