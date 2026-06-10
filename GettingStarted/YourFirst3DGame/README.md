@@ -37,8 +37,58 @@ Rotate light and enable shadow under Inspector.
 
 For this review the gizmo was used to move the light up with the Y axis (green) and rotated along the X axis (red).
 
+Note that this can be done using the Inspector for more consistent adjustments.
+
 ## Player Scene and Input Actions
+Create a new scene
+
+Create a root node "Other Node" of type "CharacterBody3D".
+
+Name the node to "Player".
+
+Create a child node of type "Node3D" and name it "Pivot".
+
+From FileSystem drop the "player.glb" file onto "Pivot".
+
+Creates a child node with the player model.
+
+Name the child node "Character".
+
+.glb files are Blender files
+
+Add a child node of type "CollisionShape3D" to the root "Player" node.
+
+Under "Inspector" use the Shape "SphereShape3D".
+
+Resize to fit the main body of the model by clicking and dragging the orange dot.
+
+Documentation states their sphere was about .8 meters.
+
+This review uses around that value.
+
+When resizing the sphere the radius will be in the lower left of the viewport.
+
+Save scene as "player.tscn".
+
 ### Creating input actions
+Open "Project" > "Project Settings" > "Input Map"
+
+Add the following actions: <br>
+* `move_left`
+* `move_right`
+* `move_forward`
+* `move_back`
+* `jump`
+
+Click the plus key and bind the arrow keys and space to movement and jumping.
+
+Add WASD as well.
+
+Click the plus key and add Joypad Axes directions for left/right/forward/back.
+
+Use the left stick.
+
+Use Button 0/Xbox A for jump
 
 ## Moving the Player With Code
 ### Testing our player's movement
