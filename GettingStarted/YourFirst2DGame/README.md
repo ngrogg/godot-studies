@@ -372,6 +372,43 @@ Add line from documentation to code in Main.
 
 ## Finishing Up
 ### Background
-### Sound effectws
+Under "Main" add a child node "ColorRect" node.
+
+Position it before the other nodes so it's drawn first.
+
+Node has only one property: Color.
+
+Select a color and choose "Layout" > "Anchors Preset" > "Full Rect" to cover the screen.
+
+A background image can also be added with "TextureRect".
+
+For this review a simple cyan background was used.
+
+### Sound effects
+Resource pack includes two sound effects.
+
+Add two "AudioStreamPlayer" child nodes to the "Main" root node.
+
+Name one "Music" and the other "DeathSound".
+
+Under "Inspector" choose "Stream" and load the respective audio files.
+
+For "Music" click on the Stream, select "Make Unique" and check the loop box. This will loop the music seamlessly.
+
+Add code from documentation to play/stop music and death sound.
+
 ### Keyboard shortcut
+Select "Project" > "Project Settings" and select "Input Map".
+
+Add an input action "start_game" and add a key mapping for the "Enter" key.
+
+This would also be a good time to test controller support. This was not done in this review.
+
+In the HUD scene select the "StartButton" node and find it's Shortcut property in Inspector.
+
+Create a new Shortcut resource, open the Events array and add a new array element to it by clicking on `Array[InputEvent] (size 0)`
+
+Select "InputEventAction" and select the "start_game" shortcut.
+
 ### Sharing the finished game with others
+To share with others export the project and zip the executable and PCK file together for uploading.
