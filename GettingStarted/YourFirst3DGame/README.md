@@ -91,7 +91,75 @@ Use the left stick.
 Use Button 0/Xbox A for jump
 
 ## Moving the Player With Code
+Remember GoDot naming conventions.
+
+GDSCript classes (nodes) use PascalCase, variables and functions use snake_case, and constants use ALL_CAPS
+
+Attach a script to the Player node. Set the template to "Object: Empty".
+
+Note that for a 3D scene a Vector3 is used.
+
+2D code uses pixels for distance. 3D uses meters.
+
+Make calculations using `_physics_process()` virtual function.
+
+Designed for physics-related code like move a body.
+
+Updates node using fixed timer intervals.
+
+[Difference between Idle and Physics Processing](https://docs.godotengine.org/en/stable/tutorials/scripting/idle_and_physics_processing.html#doc-idle-and-physics-processing)
+Initialize a direction variable.
+
+Check if a player is pressing more than one of the move input variables and update x/z.
+
+Four conditions, 8 possibilities and 8 possible directions.
+
+Use the `normalized()` method to keep vector length consistent.
+
+As single key and multi-key presses will have different lengths.
+
+Can only normalize if player is pressing a key.
+
+Compute the direction for Pivot by using a Basis that looks in the `direction` variable's direction.
+
+Calculate ground velocity and fall speed separately.
+
+Function `CharacterBody3D.is_on_floor()` returns true if the body is on the floor.
+
+Only apply gravity while player is in the air.
+
+Physics engine can only detect interactions with walls, the floor and other bodies during a frame if collision happens.
+
+Use `CharacterBody3D.move_and_slide()` to ensure a character moves smoothly.
+
+Uses velocity value native to `CharacterBody3D`.
+
 ### Testing our player's movement
+Put player in the Main scene to test it.
+
+Instantiate Child Scene from Player scene in Main scene.
+
+Add a camera next.
+
+Add a child node of type "Marker3D" to the root node. Name it "CameraPivot".
+
+Add a child node of type "Camera3D" to the node "CameraPivot".
+
+Enable "Preview".
+
+Use "View" > "2 Viewports" to split the view.
+
+Under "Inspector" use the "Transform" option to set the camera Z axis position to 19.
+
+Set "Projection" to "Orthogonal" and "Size" to "19".
+
+As of this writing those options are under "Camera3d" in the "Inspector" tab.
+
+Select the "CameraPivot" node.
+
+Under "Inspector" use the "Transform" option to set the camera X rotation to -45.
+
+Test the scene, adjust the camera's "Far" property as needed to adjust shadow quality.
 
 ## Designing the Mob Scene
 ### Removing monsters off-screen
