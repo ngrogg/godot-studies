@@ -208,8 +208,63 @@ Connect the "VisibileOnScreenNotifier3D" node's "screen_exited" signal to the "M
 Add `queue_free` to the resulting function.
 
 ## Spawning Monsters
+Open the Main scene.
+
+Go to "Project" > "Project Settings" > "General" > "Display" > "Window".
+
+Set the Viewport Width and Height to 720x540.
+
 ### Creating the spawn path
+Add a child node of type "Node3D" to the root node "Main".
+
+Name it "Cylinders".
+
+Add a child node to that node of type "MeshInstance3D".
+
+Under "Inspector" add a Mesh of type "CylinderMesh" to "MeshInstance3D".
+
+Move the node until it's right outside the camera view in the top left corner.
+
+Duplicate the node and repeat the process for the other three corners.
+
+Select all the child nodes, under "Inspector" add a "Material" "StandardMaterial3D".
+
+Expand "Albedo" and choose a color. This review used a reddish color.
+
+Note that color should be set BEFORE the cylinders are duplicated as duplicates will inherit those configurations.
+
+Add a child node "Path3D" to root "Main" node.
+
+Click the "Add Point" tool at the top of the viewport. Add points to the four cylinders.
+
+Click "Close Curve" to close the path once the four points are added.
+
+To sample positions along the curve use a "PathFollow3D" node as a child of the "Path3D" node.
+
+Rename nodes to SpawnPath and SpawnLocation.
+
 ### Spawning monsters randomly
+Attach a script to the Main node.
+
+Add the code from the documentation.
+
+Drag the "mob.tscn" scene from the FileSystem to the "Mob Scene" slot under "Inspector".
+
+Add a child node of type "Timer" to the root node "Main".
+
+Name it "MobTimer".
+
+Set it's Autostart to "0.5" and it's "Autostart" to "On".
+
+Connect the "timeout()" signal to "Main".
+
+Add code from documentation.
+
+`randf()` produces a value between 0 and 1 for the PathFollow node.
+
+0 is the start of the path, 1 is the end of the path.
+
+Test scene. Should see monsters spawn and move across the screen.
 
 ## Jumping and Squashing Monsters
 ### Controlling physics interactions
