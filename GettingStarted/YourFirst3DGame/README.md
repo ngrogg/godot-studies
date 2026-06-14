@@ -162,7 +162,50 @@ Under "Inspector" use the "Transform" option to set the camera X rotation to -45
 Test the scene, adjust the camera's "Far" property as needed to adjust shadow quality.
 
 ## Designing the Mob Scene
+Create a new scene, using a "CharacterBody3D" node as the root node.
+
+Name it "Mob".
+
+Add a child node "Node3D", name it "Pivot"
+
+Drag and drop the "mob.glb" file onto the node to add the 3d Model to the scene.
+
+Name the new child node "Character"
+
+Add a child node of type "CollisionShape3D" to the root "Mob" node.
+
+Under "Inspector" add a shape "BoxShape3D".
+
+Box can be taller than the monster but should be smaller than the monster overall.
+
+For this review a scale of (.6, .6, .6) was used after an overall rectangle shape was set.
+
 ### Removing monsters off-screen
+Add a child node of type "VisibleOnScreenNotifier3d" to the root "Mob" node.
+
+Resize the pink box until it covers the entire 3D Model.
+
+Attach a script to the mob node.
+
+Define speed variables. Will be used to define velocity at a later time.
+
+Move the mob every frame. Don't update the velocity every frame.
+
+Want moster to move at a constant speed and leave the screen.
+
+Define a function to calculate the velocity.
+
+Turns monster towards player and randomize both angle and velocity.
+
+Takes a start position, mob spawn position and the player position as arguments.
+
+Spawn mob, turn it towards the player and randomize the angle between `-PI/4` and `PI/4` radians.
+
+Next calculate a random speed
+
+Connect the "VisibileOnScreenNotifier3D" node's "screen_exited" signal to the "Mob" node.
+
+Add `queue_free` to the resulting function.
 
 ## Spawning Monsters
 ### Creating the spawn path
