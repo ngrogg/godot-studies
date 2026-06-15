@@ -351,9 +351,44 @@ Define a signal for when the mob is squished.
 Define a function to destroy the mob when squished.
 
 ## Killing the Player
+Use an Area3D node for hitbox.
+
 ### Hitbox with the area node
+Open the Player scene.
+
+Add a child node of type "Area3D" to the root Player node. Name it "MobDetector".
+
+Add a child node of type "CollisionShape3D" to that node.
+
+Under "Inspector" assign a "CylinderShape3D" Shape.
+
+Move the sphere to the top of the player model and make it wider than the round part of the body.
+
+The height of the model will likely need adjusted. The Cylinder being roughly pizza shape and slightly below the eye was used in this review.
+
+Select the "MobDetector" node and under "Inspector" turn off the "Monitorable" property.
+
+This makes it so other physics nodes cannot detect the area.
+
+Then remove the collision layer and set the mask to the "enemies" layer
+
+Under "Signals" choose the "body_entered" signal
+
+Add the code from the Documentation.
+
+This will create a signal, allow the player to die and trigger the death function when the mob detector is triggered.
+
 ### Ending the game
+Use the player's "hit" signal to end the game.
+
+Connect the signal to stop the MobTimer.
+
+Open "Main", select the Player Node and in the "Signals" doc connect the "hit" signal to the "Main" node.
+
+Expand the created function with code from documentation.
+
 ### Code checkpoint
+In the documentation this lists all the script to A/B and adjust as needed before proceeding.
 
 ## Score and Replay
 ### Creating a UI theme

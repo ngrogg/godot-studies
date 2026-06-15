@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+# Emitted when the player is hit by a mob.
+signal hit
+
 # How fast the player moves in meters per second.
 @export var speed = 14
 
@@ -76,3 +79,12 @@ func _physics_process(delta):
 				target_velocity.y = bounce_impulse
 				# Prevent further duplicate calls.
 				break
+
+# Kill player when hitting mob
+func die():
+	hit.emit()
+	queue_free()
+
+# Trigger death function when MobDetector collision signal is triggered
+func _on_mob_detector_body_entered(body: Node3D) -> void:
+	die()
