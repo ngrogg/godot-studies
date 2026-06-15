@@ -267,9 +267,88 @@ Add code from documentation.
 Test scene. Should see monsters spawn and move across the screen.
 
 ## Jumping and Squashing Monsters
+Physics Layers
+
 ### Controlling physics interactions
+Physics bodies have two complementary properties: layers and masks
+
+Layers define on which physic layer(s) an object is.
+
+Masks control the layers that a body will listen to and detext.
+
+Affect collision detection.
+
+In order for two bodies to interact they need a mask corresponding to the other.
+
+By default all bodies and areas are set to layer and mask 1.
+
+Give layers names.
+
+Project > Project Settings > Layer Names > 3D Physics
+
+Name the first three layers "player", "enemies", and "world".
+
+Under "Main" select the "Ground" node.
+
+Under "Inspector" find the "CollisionObject3D" menu and select "Collision".
+
+Set the Layer to "3" and only 3 and turn off the "Mask".
+
+Repeat the process for the "Player" and "Mob" scenes.
+
+Set the "Player" to use Layer 1 only and Masks 2 and 3.
+
+Set the "Mob" to use Layer 2 only and no masks.
+
+This will allow mobs to move through each other.
+
+Mobs do not need to mask the "world" layer becaus they onyl move on the X and Z plane.
+
 ### Jumping
+Open "Player.gd".
+
+At the top of the script add the export variable
+
+In the `_physics_process` code add the code from the documentation.
+
+The is_on_floor() method is from the "CharacterBody3D" class. It returns true if the body collided with the floor in the frame.
+
+It's why the gravity is applied to the character.
+
+Note that unlike 2D, Y is positive upwards!
+
 ### Squashing monsters
+Use Godot group tagging so player interactions with the floor are different than player interactions with monsters.
+
+Open the mob scene and select the Mob node.
+
+Go to "Groups" and add a group "mob"
+
+Make sure that little symbol with the square and circle is next to the mob node to double check work.
+
+Open the player.gd script and add the code from the documentation.
+
+The functions `get_slide_collision_count()` and `get_slide_collision()` both come from "CharacterBody3D" and are related to `move_and_slide()`.
+
+`get_slide_collision()` returns a "KinematicCollision3D" object that holds information about where and how the collision occurred.
+
+Use the get_collider property to check if player collided with a mob
+
+Method `is_in_group()` is available on every Node.
+
+To check that collisions are occuring a vector dot product is used.
+
+When dot products result in greater than 0, the two vectors are at an angle of fewer than 90 degrees.
+
+A value higher than 0.1 indicated roughly above the mob.
+
+Terminate loop to prevent duplicate calls and bugs.
+
+Open the mob.gd script and add code from documentation.
+
+Define a signal for when the mob is squished.
+
+Define a function to destroy the mob when squished.
 
 ## Killing the Player
 ### Hitbox with the area node
