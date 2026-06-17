@@ -549,3 +549,10 @@ At this point the game can be considered complete.
 
 ## Going Further
 ### Exploring the manual
+Suggestions for next steps.
+
+Scripting for essential features [here](https://docs.godotengine.org/en/stable/tutorials/scripting/index.html#toc-scripting-core-features)
+
+3D and physics sections for learning about the 3D game creation in the engine [here](https://docs.godotengine.org/en/stable/tutorials/3d/index.html#toc-learn-features-3d) and [here](https://docs.godotengine.org/en/stable/tutorials/physics/index.html#toc-learn-features-physics)
+
+Input handling is another suggestion [here](https://docs.godotengine.org/en/stable/tutorials/inputs/index.html#toc-learn-features-inputs)
