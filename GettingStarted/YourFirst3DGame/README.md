@@ -469,8 +469,83 @@ At the top will be the Main node and autoloaded nodes.
 
 ## Character Animation
 ### Using the animation editor
+Open the player scene
+
+Add a child node of type "AnimationPlayer" to the root player node.
+
+Select "Animation" and add a new animation.
+
+Name it "float"
+
+Select the "Autoplay" and "Loop" options.
+
+Pin the animation editor to prevent from closing if a different node is selected.
+
+Set the animation duration to 1.2 seconds.
+
+Zoom the timeline (lower right of editor) to fit the timespan.
+
 ### The float animation
+Select the "Character" node, expand transform and click the key symbol next to "Position" and "Rotation"
+
+Use default "RESET Track(s)"
+
+Move the position and rotation keys as described in the documentation.
+
+Set time to .5, use the text box, don't move it manually.
+
+Go back to character node and set position/portation. Set another keyframe with updated values at time.
+
+Set time to 1.2, add next position/rotation value from documentation and set keyframes.
+
+Test animation, use play button at top of of animation editor window.
+
+Make sure 3d viewport is selected.
+
+Select the first two keyframes set for position rotation
+
+Under "Inspector" adjust the "Easing" value.
+
+For this review an easing of about .45 is used.
+
+Apply a similar easing to the second two keyframes.
+
+Finally apply another easing to the last two keyframes.
+
+This review used a value of around 1.75 for the last keyframe.
+
+Test animation again. Should look much less robotic.
+
+Next test the main scene to make sure player doesn't go through the floor.
+
+Open the player.gd script.
+
+Add code from documentation.
+
+Should increase the animation speed while player moves and arc the player when jumping.
+
 ### Animating the mobs
+As long as nodes have a similar structure animations can be reused.
+
+Open the Player scene, select the "AnimationPlayer" node and select "Animation" > "Manage Animations..."
+
+Select the "Copy animation to clipboard" button alongside the "float" animation.
+
+Open the mob scene, add a child node of type "AnimationPlayer".
+
+Select "Animation" > "Manage Animations" > "New Library".
+
+Leave name blank
+
+Click paste button to load animation.
+
+Ensure the autoplay and repeat are turned on.
+
+Open the mob script and add the code from the documentation.
+
+Test main scene, mobs should also use the float animation now.
+
+At this point the game can be considered complete.
 
 ## Going Further
 ### Exploring the manual
