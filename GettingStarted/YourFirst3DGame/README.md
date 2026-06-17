@@ -391,10 +391,81 @@ Expand the created function with code from documentation.
 In the documentation this lists all the script to A/B and adjust as needed before proceeding.
 
 ## Score and Replay
+In the main scene add a new child node "Control" to the root Main node and name it "UserInterface".
+
+Add a child node to that node of type "Label" and name it "ScoreLabel".
+
+In "Inspector" set the Label's text to "Score: 0" as a placeholder.
+
+Change the font color under "Control" > "Theme Overrides" > "Colors" > "Font Color"
+
+This review uses black.
+
+Open "2D View" and move the label away from the top-left corner.
+
 ### Creating a UI theme
+Select the UserInterface node.
+
+Create a new theme under "Inspector" > "Theme" > "Theme"
+
+Drag and drop the font from the FileSystem tab to the "Default Font" option.
+
+Increase the font size to about 22 Px
+
 ### Keeping track of the score
+Attach a script to "ScoreLabel" and define a score variable.
+
+Use the Mob squashed signal to increase the score by one
+
+Cannot be done via normal signal means, add code from documentation to main.gd script.
+
+Test scene, score should iterate when monsters are squashed.
+
+More complicated games should keep the UI on it's own.
+
 ### Retrying the game
+Open the Main scene.
+
+Add a child node of type "ColorRect" to the "UserInterface" node and name it "Retry".
+
+Use the "Full Rect" Anchor Preset from the Anchor menu at the top of the viewport.
+
+Select the "UserInterface" node and apply the same Anchor Preset to it as well.
+
+Select "Retry" and under "Inspector" set it's color to something dark and transparent.
+
+Set the RGB and A values. For this review black (RGB 000) is used with an A value of about 50%
+
+Next add a child node of type "Label" to the node "Retry" and set it's text to "Press Enter to retry".
+
+Apply the Anchor Preset "center".
+
+Open the main.gd script, add the code from the documentation.
+
+Use the built-in `_unhandled_input()` function to reload if the player presses enter.
+
 ### Adding music
+Create a new scene.
+
+Choose the "Other Node" button and create a node "AudioStreamPlayer". Name it "MusicPlayer".
+
+Under "Inspector" drag and drop the music from FileSystem to "Stream".
+
+Enable Autoplay.
+
+Save scene as "music_player.tscn".
+
+Head to "Project" > "Project Settings" > "Globals" > "Autoload"
+
+Choose the music player scene
+
+Choose "Add".
+
+When the game runs the scene dock has two tabs: Remote and Local.
+
+Remote visualizes the node tree of the game.
+
+At the top will be the Main node and autoloaded nodes.
 
 ## Character Animation
 ### Using the animation editor
